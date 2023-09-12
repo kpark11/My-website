@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[13]:
+# In[6]:
 
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
@@ -24,14 +24,7 @@ import matplotlib.pyplot as plt
 import base64
 import dash_bootstrap_components as dbc
 
-cwd = os.getcwd()
-print(cwd)
-file_path = cwd+'\download'
-try:
-    os.mkdir(file_path)
-except:
-    print('already exists')
-
+image_path = 'assets/Kiman-Abby.jpeg'
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
 
@@ -46,8 +39,15 @@ app.layout = html.Div([
     html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
     html.P("This is our story! We have so much to show and tell!", 
            style={'textAlign':'center'}),
-
-    
+    html.Img(src=image_path,
+        style={'width': 500, #'98%''
+                'height': 400, #'60px'
+                'borderRadius': "5px",
+                'textAlign': "center",
+                'margin': "0 auto",
+               'display': 'block',
+              'margin-left': 'auto',
+              'margin-right': 'auto'})
 ])
 
 
