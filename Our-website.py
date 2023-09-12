@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[39]:
+# In[76]:
 
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
@@ -24,12 +24,13 @@ import matplotlib.pyplot as plt
 import base64
 import dash_bootstrap_components as dbc
 
-
+cwd = r'C:\Users\brian\OneDrive - University of Tennessee\Desktop\Research\Python program\Our_website'
+os.chdir(cwd)
+cwd = os.getcwd()
+print(cwd)
 image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true'
 
-#cwd = os.chdir('assets')
-
-app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
+app = dash.Dash(external_stylesheets=[dbc.themes.LUX],use_pages=True)
 
 server = app.server
 
@@ -51,8 +52,15 @@ app.layout = html.Div([
                'display': 'block',
               'margin-left': 'auto',
               'margin-right': 'auto'}),
-])
-
+    html.P(cwd),
+    
+    html.Div([
+        html.Div(
+            dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
+                ) for page in dash.page_registry.values()
+            ]),
+            dash.page_container
+    ])
 
     
     
