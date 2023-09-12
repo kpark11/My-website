@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[14]:
+# In[15]:
 
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
@@ -26,7 +26,7 @@ import dash_bootstrap_components as dbc
 
 
 print(os.getcwd())
-image_path = 'assets/Kiman-Abby.jpeg'
+image_path = 'https://github.com/kpark11/Our-website/tree/main/assets/Kiman-Abby.jpeg'
 
 
 
