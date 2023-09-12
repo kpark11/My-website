@@ -24,10 +24,7 @@ import matplotlib.pyplot as plt
 import base64
 import dash_bootstrap_components as dbc
 
-cwd = r'C:\Users\brian\OneDrive - University of Tennessee\Desktop\Research\Python program\Our_website'
-os.chdir(cwd)
-cwd = os.getcwd()
-print(cwd)
+
 image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true'
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX],use_pages=True)
