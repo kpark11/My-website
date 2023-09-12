@@ -25,9 +25,9 @@ import base64
 import dash_bootstrap_components as dbc
 
 
-image_path = 'https://github.com/kpark11/Our-website/tree/main/assets/Kiman-Abby.jpeg'
+image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true'
 
-cwd = os.getcwd()
+cwd = os.chdir('assets')
 lists = os.listdir(cwd)
 lists1 = os.listdir('/opt/render/project')
 lists2 = os.listdir('/opt/render')
