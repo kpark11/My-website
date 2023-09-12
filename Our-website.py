@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[15]:
+# In[18]:
 
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
@@ -25,10 +25,9 @@ import base64
 import dash_bootstrap_components as dbc
 
 
-print(os.getcwd())
 image_path = 'https://github.com/kpark11/Our-website/tree/main/assets/Kiman-Abby.jpeg'
 
-
+cwd = os.getcwd()
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
 
@@ -51,7 +50,8 @@ app.layout = html.Div([
                 'margin': "0 auto",
                'display': 'block',
               'margin-left': 'auto',
-              'margin-right': 'auto'})
+              'margin-right': 'auto'}),
+    html.P(cwd)
 ])
 
 
