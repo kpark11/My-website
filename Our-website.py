@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[22]:
+# In[23]:
 
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
@@ -46,7 +46,7 @@ app.layout = html.Div([
     html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
     html.P("This is our story! We have so much to show and tell!", 
            style={'textAlign':'center'}),
-    html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
+    html.Img(src=app.get_asset_url('Kiman-Abby.jpeg'),
         style={'width': 500, #'98%''
                 'height': 400, #'60px'
                 'borderRadius': "5px",
