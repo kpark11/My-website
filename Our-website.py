@@ -25,7 +25,7 @@ import datetime
 
 
 def serve_layout():
-    return html.H1('The time is: ' + str(datetime.datetime.now()))
+    return html.H3('The time is: ' + str(datetime.datetime.now()), style={'textAlign': 'center'})
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX],pages_folder="/opt/render/project/src/pages")
 
@@ -36,8 +36,8 @@ app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
 
 app.layout = html.Div([
-    html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}),    
-    
+    html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
+    serve_layout()
     html.Div([
         html.Div(
              dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
