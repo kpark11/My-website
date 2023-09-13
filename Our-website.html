@@ -13191,7 +13191,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###</span>
@@ -13212,6 +13212,13 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">base64</span>
 <span class="kn">import</span> <span class="nn">dash_bootstrap_components</span> <span class="k">as</span> <span class="nn">dbc</span>
 
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/src/&#39;</span><span class="p">)</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/src/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
 
 <span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true&#39;</span>
 
@@ -13271,83 +13278,15 @@ div#notebook {
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">OSError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-9-04fcd3e419e1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">     57</span> 
-<span class="ansi-green-fg">     58</span> <span class="ansi-green-intense-fg ansi-bold">if</span> __name__ <span class="ansi-yellow-intense-fg ansi-bold">==</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;__main__&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 59</span><span class="ansi-yellow-intense-fg ansi-bold">     </span>app<span class="ansi-yellow-intense-fg ansi-bold">.</span>run_server<span class="ansi-yellow-intense-fg ansi-bold">(</span>debug<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-green-intense-fg ansi-bold">True</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     60</span> 
+<span class="ansi-red-intense-fg ansi-bold">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-10-61df069c0443&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">     17</span> <span class="ansi-green-intense-fg ansi-bold">import</span> dash_bootstrap_components <span class="ansi-green-intense-fg ansi-bold">as</span> dbc
+<span class="ansi-green-fg">     18</span> 
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 19</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>os<span class="ansi-yellow-intense-fg ansi-bold">.</span>chdir<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;/opt/render/project/src/&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     20</span> cwd <span class="ansi-yellow-intense-fg ansi-bold">=</span> os<span class="ansi-yellow-intense-fg ansi-bold">.</span>listdir<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;/opt/render/project/src/&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     21</span> print<span class="ansi-yellow-intense-fg ansi-bold">(</span>cwd<span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\dash\dash.py</span> in <span class="ansi-cyan-fg">run_server</span><span class="ansi-blue-intense-fg ansi-bold">(self, *args, **kwargs)</span>
-<span class="ansi-green-fg">   2096</span>         See<span class="ansi-red-fg"> </span><span class="ansi-red-fg">`</span>app<span class="ansi-yellow-intense-fg ansi-bold">.</span>run<span class="ansi-red-fg">`</span> <span class="ansi-green-intense-fg ansi-bold">for</span> usage information<span class="ansi-yellow-intense-fg ansi-bold">.</span>
-<span class="ansi-green-fg">   2097</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 2098</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>run<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\dash\dash.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-intense-fg ansi-bold">(self, host, port, proxy, debug, jupyter_mode, jupyter_width, jupyter_height, jupyter_server_url, dev_tools_ui, dev_tools_props_check, dev_tools_serve_dev_bundles, dev_tools_hot_reload, dev_tools_hot_reload_interval, dev_tools_hot_reload_watch_interval, dev_tools_hot_reload_max_retry, dev_tools_silence_routes_logging, dev_tools_prune_errors, **flask_run_options)</span>
-<span class="ansi-green-fg">   2001</span>                 host<span class="ansi-yellow-intense-fg ansi-bold">=</span>host<span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-fg">   2002</span>                 port<span class="ansi-yellow-intense-fg ansi-bold">=</span>port<span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 2003</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span>server_url<span class="ansi-yellow-intense-fg ansi-bold">=</span>jupyter_server_url<span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-fg">   2004</span>             )
-<span class="ansi-green-fg">   2005</span>         <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\dash\_jupyter.py</span> in <span class="ansi-cyan-fg">run_app</span><span class="ansi-blue-intense-fg ansi-bold">(self, app, mode, width, height, host, port, server_url)</span>
-<span class="ansi-green-fg">    399</span>                 display<span class="ansi-yellow-intense-fg ansi-bold">(</span>HTML<span class="ansi-yellow-intense-fg ansi-bold">(</span>msg<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    400</span>             <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 401</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span><span class="ansi-green-intense-fg ansi-bold">raise</span> final_error
-<span class="ansi-green-fg">    402</span> 
-<span class="ansi-green-fg">    403</span>     <span class="ansi-yellow-intense-fg ansi-bold">@</span>staticmethod
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\dash\_jupyter.py</span> in <span class="ansi-cyan-fg">run_app</span><span class="ansi-blue-intense-fg ansi-bold">(self, app, mode, width, height, host, port, server_url)</span>
-<span class="ansi-green-fg">    386</span> 
-<span class="ansi-green-fg">    387</span>         <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 388</span><span class="ansi-yellow-intense-fg ansi-bold">             </span>wait_for_app<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    389</span> 
-<span class="ansi-green-fg">    390</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>in_colab<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\retrying.py</span> in <span class="ansi-cyan-fg">wrapped_f</span><span class="ansi-blue-intense-fg ansi-bold">(*args, **kw)</span>
-<span class="ansi-green-fg">     54</span>             <span class="ansi-yellow-intense-fg ansi-bold">@</span>six<span class="ansi-yellow-intense-fg ansi-bold">.</span>wraps<span class="ansi-yellow-intense-fg ansi-bold">(</span>f<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     55</span>             <span class="ansi-green-intense-fg ansi-bold">def</span> wrapped_f<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kw<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 56</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span><span class="ansi-green-intense-fg ansi-bold">return</span> Retrying<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>dargs<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>dkw<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>call<span class="ansi-yellow-intense-fg ansi-bold">(</span>f<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kw<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     57</span> 
-<span class="ansi-green-fg">     58</span>             <span class="ansi-green-intense-fg ansi-bold">return</span> wrapped_f
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\retrying.py</span> in <span class="ansi-cyan-fg">call</span><span class="ansi-blue-intense-fg ansi-bold">(self, fn, *args, **kwargs)</span>
-<span class="ansi-green-fg">    264</span>                 <span class="ansi-green-intense-fg ansi-bold">if</span> <span class="ansi-green-intense-fg ansi-bold">not</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_wrap_exception <span class="ansi-green-intense-fg ansi-bold">and</span> attempt<span class="ansi-yellow-intense-fg ansi-bold">.</span>has_exception<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    265</span>                     <span class="ansi-red-intense-fg ansi-bold"># get() on an attempt with an exception should cause it to be raised, but raise just in case</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 266</span><span class="ansi-yellow-intense-fg ansi-bold">                     </span><span class="ansi-green-intense-fg ansi-bold">raise</span> attempt<span class="ansi-yellow-intense-fg ansi-bold">.</span>get<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    267</span>                 <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    268</span>                     <span class="ansi-green-intense-fg ansi-bold">raise</span> RetryError<span class="ansi-yellow-intense-fg ansi-bold">(</span>attempt<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\retrying.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-intense-fg ansi-bold">(self, wrap_exception)</span>
-<span class="ansi-green-fg">    299</span>                 <span class="ansi-green-intense-fg ansi-bold">raise</span> RetryError<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    300</span>             <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 301</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span>six<span class="ansi-yellow-intense-fg ansi-bold">.</span>reraise<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>value<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">0</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>value<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>value<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    302</span>         <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    303</span>             <span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>value
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\six.py</span> in <span class="ansi-cyan-fg">reraise</span><span class="ansi-blue-intense-fg ansi-bold">(tp, value, tb)</span>
-<span class="ansi-green-fg">    717</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> value<span class="ansi-yellow-intense-fg ansi-bold">.</span>__traceback__ <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">not</span> tb<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    718</span>                 <span class="ansi-green-intense-fg ansi-bold">raise</span> value<span class="ansi-yellow-intense-fg ansi-bold">.</span>with_traceback<span class="ansi-yellow-intense-fg ansi-bold">(</span>tb<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 719</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">raise</span> value
-<span class="ansi-green-fg">    720</span>         <span class="ansi-green-intense-fg ansi-bold">finally</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    721</span>             value <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-green-intense-fg ansi-bold">None</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\retrying.py</span> in <span class="ansi-cyan-fg">call</span><span class="ansi-blue-intense-fg ansi-bold">(self, fn, *args, **kwargs)</span>
-<span class="ansi-green-fg">    249</span> 
-<span class="ansi-green-fg">    250</span>             <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 251</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span>attempt <span class="ansi-yellow-intense-fg ansi-bold">=</span> Attempt<span class="ansi-yellow-intense-fg ansi-bold">(</span>fn<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> attempt_number<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-green-intense-fg ansi-bold">False</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    252</span>             <span class="ansi-green-intense-fg ansi-bold">except</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    253</span>                 tb <span class="ansi-yellow-intense-fg ansi-bold">=</span> sys<span class="ansi-yellow-intense-fg ansi-bold">.</span>exc_info<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\dash\_jupyter.py</span> in <span class="ansi-cyan-fg">wait_for_app</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">    378</span>                     url <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-blue-intense-fg ansi-bold">f&#34;http://{host}:{port}&#34;</span>
-<span class="ansi-green-fg">    379</span>                     raise OSError(
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 380</span><span class="ansi-yellow-intense-fg ansi-bold">                         </span><span class="ansi-blue-intense-fg ansi-bold">f&#34;Address &#39;{url}&#39; already in use.\n&#34;</span>
-<span class="ansi-green-fg">    381</span>                         <span class="ansi-blue-intense-fg ansi-bold">&#34;    Try passing a different port to run_server.&#34;</span>
-<span class="ansi-green-fg">    382</span>                     )
-
-<span class="ansi-red-intense-fg ansi-bold">OSError</span>: Address &#39;http://127.0.0.1:8050&#39; already in use.
-    Try passing a different port to run_server.</pre>
+<span class="ansi-red-intense-fg ansi-bold">FileNotFoundError</span>: [WinError 3] The system cannot find the path specified: &#39;/opt/render/project/src/&#39;</pre>
 </div>
 </div>
 
