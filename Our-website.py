@@ -26,7 +26,7 @@ import datetime
 
 def serve_layout():
     return html.P('The time is: ' + str(datetime.datetime.now()), 
-                  style={'textAlign': 'center','color':'#B0FAA4','font-size':20})
+                  style={'textAlign': 'center','color':'#CECFCF','font-size':20})
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX],pages_folder="/opt/render/project/src/pages")
 
