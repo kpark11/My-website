@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[76]:
-
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
 
@@ -49,7 +47,6 @@ app.layout = html.Div([
                'display': 'block',
               'margin-left': 'auto',
               'margin-right': 'auto'}),
-    html.P(cwd),
     
     html.Div([
         html.Div(
