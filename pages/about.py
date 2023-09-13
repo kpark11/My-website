@@ -16,7 +16,7 @@ layout = html.Div([
         html.P('Kiman Park, Ph.D.:',style={'textAlign': 'center', 'color': '#FF8903'}),
         html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate',style={'textAlign': 'center', 'color': '#FF8903'}),
         dcc.Link(href='kimanpark33@gmail.com',style={'textAlign': 'center', 'color': '#FF8903'}),
-        html.br(),
+        html.Br(),
         html.P('Abby Carpenter, MPH:',style={'textAlign': 'center', 'color': '#FF8903'}),
         html.P('Tennessee Department of Health - Epidemiologist',style={'textAlign': 'center', 'color': '#FF8903'}),
         dcc.Link(href='carpenter.abby25@gmail.com',style={'textAlign': 'center', 'color': '#FF8903'})
