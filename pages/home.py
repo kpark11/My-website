@@ -7,8 +7,25 @@ from dash import html
 
 dash.register_page(__name__, path='/')
 
+
+image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true'
+
+
+
 dash.layout = html.Div([
-    html.H1('This is our Home page'),
-    html.Div('This is our Home page content.'),
+    
+    html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}),
+    html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
+    html.P("This is our story! We have so much to show and tell!", 
+           style={'textAlign':'center'}),
+    html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
+        style={'width': 550, #'98%''
+                'height': 400, #'60px'
+                'borderRadius': "5px",
+                'textAlign': "center",
+                'margin': "0 auto",
+               'display': 'block',
+              'margin-left': 'auto',
+              'margin-right': 'auto'}),
 ])
 
