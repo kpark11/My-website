@@ -13191,7 +13191,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###</span>
@@ -13212,19 +13212,25 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">base64</span>
 <span class="kn">import</span> <span class="nn">dash_bootstrap_components</span> <span class="k">as</span> <span class="nn">dbc</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/src/&#39;</span><span class="p">)</span>
-<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/src/&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
-<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
-<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+
 
 <span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true&#39;</span>
 
 <span class="n">page</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/kpark11/Our-website/tree/main/pages&#39;</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="n">external_stylesheets</span><span class="o">=</span><span class="p">[</span><span class="n">dbc</span><span class="o">.</span><span class="n">themes</span><span class="o">.</span><span class="n">LUX</span><span class="p">])</span>
+
+
+
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/src/&#39;</span><span class="p">)</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/src/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/project/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cwd1</span><span class="p">)</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/opt/render/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cwd2</span><span class="p">)</span>
+
+
 
 <span class="n">server</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">server</span>
 
@@ -13247,6 +13253,9 @@ div#notebook {
               <span class="s1">&#39;margin-left&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span>
               <span class="s1">&#39;margin-right&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">}),</span>
     
+    <span class="n">html</span><span class="o">.</span><span class="n">P</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">P</span><span class="p">(</span><span class="n">cwd1</span><span class="p">)</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">P</span><span class="p">(</span><span class="n">cwd2</span><span class="p">)</span>
     
     <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
         <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
@@ -13277,16 +13286,11 @@ div#notebook {
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-10-61df069c0443&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">     17</span> <span class="ansi-green-intense-fg ansi-bold">import</span> dash_bootstrap_components <span class="ansi-green-intense-fg ansi-bold">as</span> dbc
-<span class="ansi-green-fg">     18</span> 
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 19</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>os<span class="ansi-yellow-intense-fg ansi-bold">.</span>chdir<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;/opt/render/project/src/&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     20</span> cwd <span class="ansi-yellow-intense-fg ansi-bold">=</span> os<span class="ansi-yellow-intense-fg ansi-bold">.</span>listdir<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;/opt/render/project/src/&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     21</span> print<span class="ansi-yellow-intense-fg ansi-bold">(</span>cwd<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">FileNotFoundError</span>: [WinError 3] The system cannot find the path specified: &#39;/opt/render/project/src/&#39;</pre>
+<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-11-296eb168a381&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">50</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    cwd = os.listdir(&#39;/opt/render/project/src/&#39;)</span>
+<span class="ansi-white-intense-fg ansi-bold">      ^</span>
+<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
+</pre>
 </div>
 </div>
 
