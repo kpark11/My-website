@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[11]:
+
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
 
 
 import dash
-from dash import dcc
-from dash import State
-from dash import html
+from dash import dcc,State,html
 from dash.dependencies import Input, Output
 import pandas as pd
 import numpy as np
@@ -23,9 +23,24 @@ import base64
 import dash_bootstrap_components as dbc
 
 
+
 image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true'
 
-app = dash.Dash(external_stylesheets=[dbc.themes.LUX],use_pages=True)
+page = 'https://github.com/kpark11/Our-website/tree/main/pages'
+
+app = dash.Dash(external_stylesheets=[dbc.themes.LUX])
+
+
+
+os.chdir('/opt/render/project/src/')
+cwd = os.listdir('/opt/render/project/src/')
+print(cwd)
+cwd1 = os.listdir('/opt/render/project/')
+print(cwd1)
+cwd2 = os.listdir('/opt/render/')
+print(cwd2)
+
+
 
 server = app.server
 
@@ -48,9 +63,13 @@ app.layout = html.Div([
               'margin-left': 'auto',
               'margin-right': 'auto'}),
     
+    html.P(cwd)
+    html.P(cwd1)
+    html.P(cwd2)
+    
     html.Div([
         html.Div(
-            dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
+            dcc.Link(page)
                 ) for page in dash.page_registry.values()
             ]),
             dash.page_container
@@ -60,5 +79,4 @@ app.layout = html.Div([
     
 if __name__ == '__main__':
     app.run_server(debug=True)
-
 
