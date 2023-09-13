@@ -19,7 +19,7 @@ layout = html.Div([
                style={'textAlign': 'center'}),
         html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate',
                style={'textAlign': 'center'}),
-        html.P(dcc.Link(href='kimanpark33@gmail.com'),
+        html.P(href='kimanpark33@gmail.com',
                      style={'textAlign': 'center'}),
         html.Br(),
         html.P('Abby Carpenter, MPH:',
