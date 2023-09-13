@@ -8,7 +8,7 @@ from dash import html, dcc, callback, Input, Output
 dash.register_page(__name__)
 
 layout = html.Div([
-    html.H1('This is our Analytics page'),
+    html.H2('This is our Analytics page',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Div([
         "Select a city: ",
         dcc.RadioItems(
