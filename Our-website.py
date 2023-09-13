@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[17]:
+# In[21]:
 
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
@@ -50,13 +50,13 @@ app.layout = html.Div([
               'margin-right': 'auto'}),
     
     html.Div([
-        html.Div(
+        #html.Div(
              dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
-                ) for page in dash.page_registry.values()
-            #dcc.Link(page)
-            #    ) for page in dash.page_registry.values()
+                #) 
+                      for page in dash.page_registry.values()
             ]),
-            dash.page_container
+            dash.page_container,
+            style={'textAlign': 'center', 'color': '#FF8903'}
     ])
 
     
