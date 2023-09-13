@@ -13,9 +13,7 @@ image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby
 
 
 layout = html.Div([
-    
-    html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}),
-    html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
+        html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
     html.P("This is our story! We have so much to show and tell!", 
            style={'textAlign':'center'}),
     html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
