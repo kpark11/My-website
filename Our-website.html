@@ -13191,7 +13191,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###</span>
@@ -13240,12 +13240,10 @@ div#notebook {
               <span class="s1">&#39;margin-left&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span>
               <span class="s1">&#39;margin-right&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">}),</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">dash</span><span class="o">.</span><span class="n">page_container</span><span class="p">)</span>
     
     <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
         <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span>
-            <span class="n">dcc</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{page[&#39;name&#39;]}</span><span class="s2"> - </span><span class="si">{page[&#39;path&#39;]}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">page</span><span class="p">[</span><span class="s2">&quot;relative_path&quot;</span><span class="p">])</span>
+            <span class="n">dcc</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
                 <span class="p">)</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">dash</span><span class="o">.</span><span class="n">page_registry</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
             <span class="p">]),</span>
             <span class="n">dash</span><span class="o">.</span><span class="n">page_container</span>
@@ -13274,11 +13272,10 @@ div#notebook {
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">OSError</span>                                   Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-2-669fb3c1c7ae&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">     56</span> 
-<span class="ansi-green-fg">     57</span> <span class="ansi-green-intense-fg ansi-bold">if</span> __name__ <span class="ansi-yellow-intense-fg ansi-bold">==</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;__main__&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 58</span><span class="ansi-yellow-intense-fg ansi-bold">     </span>app<span class="ansi-yellow-intense-fg ansi-bold">.</span>run_server<span class="ansi-yellow-intense-fg ansi-bold">(</span>debug<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-green-intense-fg ansi-bold">True</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     59</span> 
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-9-04fcd3e419e1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">     57</span> 
+<span class="ansi-green-fg">     58</span> <span class="ansi-green-intense-fg ansi-bold">if</span> __name__ <span class="ansi-yellow-intense-fg ansi-bold">==</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;__main__&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 59</span><span class="ansi-yellow-intense-fg ansi-bold">     </span>app<span class="ansi-yellow-intense-fg ansi-bold">.</span>run_server<span class="ansi-yellow-intense-fg ansi-bold">(</span>debug<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-green-intense-fg ansi-bold">True</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 <span class="ansi-green-fg">     60</span> 
 
 <span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\dash\dash.py</span> in <span class="ansi-cyan-fg">run_server</span><span class="ansi-blue-intense-fg ansi-bold">(self, *args, **kwargs)</span>
