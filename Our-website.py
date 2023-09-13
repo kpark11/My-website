@@ -63,9 +63,9 @@ app.layout = html.Div([
               'margin-left': 'auto',
               'margin-right': 'auto'}),
     
-    html.P(cwd)
-    html.P(cwd1)
-    html.P(cwd2)
+    html.P(cwd),
+    html.P(cwd1),
+    html.P(cwd2),
     
     html.Div([
         html.Div(
