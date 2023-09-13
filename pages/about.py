@@ -19,14 +19,14 @@ layout = html.Div([
                style={'textAlign': 'center'}),
         html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate',
                style={'textAlign': 'center'}),
-        html.P(dcc.Link(href='kimanpark33@gmail.com',
-                     style={'textAlign': 'center'})),
+        html.P(dcc.Link(href='kimanpark33@gmail.com'),
+                     style={'textAlign': 'center'}),
         html.Br(),
         html.P('Abby Carpenter, MPH:',
                style={'textAlign': 'center'}),
         html.P('Tennessee Department of Health - Epidemiologist',
                style={'textAlign': 'center'}),
-        html.P(dcc.Link(href='carpenter.abby25@gmail.com',
-                     style={'textAlign': 'center'}))
+        html.P(dcc.Link(href='carpenter.abby25@gmail.com'),
+                     style={'textAlign': 'center'})
         
 ])

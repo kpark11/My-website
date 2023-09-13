@@ -8,7 +8,7 @@ from dash import html
 dash.register_page(__name__, path='/')
 
 
-image_path = '/opt/render/project/src/assets/Kiman-Abby.jpeg'
+image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true'
 
 layout = html.Div([
         html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
