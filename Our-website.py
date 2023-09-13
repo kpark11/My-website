@@ -21,7 +21,11 @@ import fnmatch
 import matplotlib.pyplot as plt
 import base64
 import dash_bootstrap_components as dbc
+import datetime
 
+
+def serve_layout():
+    return html.H1('The time is: ' + str(datetime.datetime.now()))
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX],pages_folder="/opt/render/project/src/pages")
 
@@ -33,6 +37,7 @@ app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 
 app.layout = html.Div([
     html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}),    
+    
     html.Div([
         html.Div(
              dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
