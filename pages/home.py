@@ -12,7 +12,7 @@ image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby
 
 
 
-dash.layout = html.Div([
+layout = html.Div([
     
     html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}),
     html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
