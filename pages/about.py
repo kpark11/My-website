@@ -25,10 +25,7 @@ layout = html.Div([
                 html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate',
                        style={'textAlign': 'center'}),
                 html.P(dcc.Link(href='kimanpark33@gmail.com'),
-                             style={'textAlign': 'center'}),
-                html.Br(),
-               
-               children="Block 1",className="box1",
+                       style={'textAlign': 'center'}),
                         style={
                         #'backgroundColor':'darkslategray',
                         #'color':'lightsteelblue',
@@ -38,7 +35,10 @@ layout = html.Div([
                         'text-align':'center',
                         'display':'inline-block'
                         }),
-            
+           
+           
+            html.Br(),
+
             html.Div(
                 
                 html.P('Abby Carpenter, MPH:',
@@ -47,8 +47,6 @@ layout = html.Div([
                        style={'textAlign': 'center'}),
                 html.P(dcc.Link(href='carpenter.abby25@gmail.com'),
                        style={'textAlign': 'center'}),
-        
-                children="Block 2",className="box2",
                        style={
                         #'backgroundColor':'darkslategray',
                         #'color':'lightsteelblue',
