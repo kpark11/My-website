@@ -18,7 +18,7 @@ layout = html.Div([
         
         
          html.Div([
-           html.Div([
+           html.Div(children=[
                
                html.P('Kiman Park, Ph.D.:',
                        style={'textAlign': 'center','font-weight': 'bold'}),
@@ -26,6 +26,7 @@ layout = html.Div([
                        style={'textAlign': 'center'}),
                 html.P(dcc.Link(href='kimanpark33@gmail.com'),
                        style={'textAlign': 'center'}),
+                    ],
                         style={
                         #'backgroundColor':'darkslategray',
                         #'color':'lightsteelblue',
@@ -34,12 +35,12 @@ layout = html.Div([
                         'width':'50%',
                         'text-align':'center',
                         'display':'inline-block'
-                        }]),
+                        }),
            
            
             html.Br(),
 
-            html.Div([
+            html.Div(children=[
                 
                 html.P('Abby Carpenter, MPH:',
                        style={'textAlign': 'center','font-weight': 'bold'}),
@@ -47,6 +48,7 @@ layout = html.Div([
                        style={'textAlign': 'center'}),
                 html.P(dcc.Link(href='carpenter.abby25@gmail.com'),
                        style={'textAlign': 'center'}),
+                ],
                        style={
                         #'backgroundColor':'darkslategray',
                         #'color':'lightsteelblue',
@@ -55,7 +57,7 @@ layout = html.Div([
                         'text-align':'center',
                         'width':'50%',
                         'display':'inline-block'
-               }]),
+               }),
                 ]),
         
         
