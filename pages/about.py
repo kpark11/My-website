@@ -28,15 +28,15 @@ layout = html.Div([
                 html.P(dcc.Link(href='carpenter.abby25@gmail.com'),
                        style={'textAlign': 'center'}),
                 ],
-                       style={
+                       #style={
                         #'backgroundColor':'darkslategray',
                         #'color':'lightsteelblue',
                         #'height':'100px',
                         #'margin-left':'10px',
-                        'text-align':'center',
-                        'width':'49%',
-                        'display':'inline-block'
-               }),
+                        #'text-align':'center',
+                        #'width':'49%',
+                        #'display':'inline-block'}
+                        ),
             
             
             html.Div(children=[
@@ -48,15 +48,15 @@ layout = html.Div([
                 html.P(dcc.Link(href='kimanpark33@gmail.com'),
                        style={'textAlign': 'center'}),
                     ],
-                        style={
+                        #style={
                         #'backgroundColor':'darkslategray',
                         #'color':'lightsteelblue',
                         #'height':'100px',
                         #'margin-left':'10px',
-                        'width':'49%',
-                        'text-align':'center',
-                        'display':'inline-block'
-                        }),
+                        #'width':'49%',
+                        #'text-align':'center',
+                        #'display':'inline-block'}
+                        ),
             ]),
          
          
