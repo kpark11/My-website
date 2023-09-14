@@ -39,6 +39,9 @@ layout = html.Div([
                         ),
             
             
+            html.Br(),
+            html.Br()
+            
             html.Div(children=[
                
                html.P('Kiman Park, Ph.D.:',
