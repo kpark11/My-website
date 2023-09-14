@@ -32,13 +32,10 @@ layout = html.Div([
                         #'color':'lightsteelblue',
                         #'height':'100px',
                         #'margin-left':'10px',
-                        'width':'50%',
+                        'width':'49%',
                         'text-align':'center',
                         'display':'inline-block'
                         }),
-           
-           
-            html.Br(),
 
             html.Div(children=[
                 
@@ -55,7 +52,7 @@ layout = html.Div([
                         #'height':'100px',
                         #'margin-left':'10px',
                         'text-align':'center',
-                        'width':'50%',
+                        'width':'49%',
                         'display':'inline-block'
                }),
                 ]),
