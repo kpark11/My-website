@@ -18,7 +18,7 @@ layout = html.Div([
         
         
          html.Div([
-           html.Div(
+           html.Div([
                
                html.P('Kiman Park, Ph.D.:',
                        style={'textAlign': 'center','font-weight': 'bold'}),
@@ -34,12 +34,12 @@ layout = html.Div([
                         'width':'50%',
                         'text-align':'center',
                         'display':'inline-block'
-                        }),
+                        }]),
            
            
             html.Br(),
 
-            html.Div(
+            html.Div([
                 
                 html.P('Abby Carpenter, MPH:',
                        style={'textAlign': 'center','font-weight': 'bold'}),
@@ -55,8 +55,8 @@ layout = html.Div([
                         'text-align':'center',
                         'width':'50%',
                         'display':'inline-block'
-               }),
-                        ]),
+               }]),
+                ]),
         
         
         
