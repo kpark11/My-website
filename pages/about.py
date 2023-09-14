@@ -30,11 +30,11 @@ layout = html.Div([
                
                children="Block 1",className="box1",
                         style={
-                        'backgroundColor':'darkslategray',
-                        'color':'lightsteelblue',
-                        'height':'100px',
-                        'margin-left':'10px',
-                        'width':'45%',
+                        #'backgroundColor':'darkslategray',
+                        #'color':'lightsteelblue',
+                        #'height':'100px',
+                        #'margin-left':'10px',
+                        'width':'50%',
                         'text-align':'center',
                         'display':'inline-block'
                         }),
@@ -50,12 +50,12 @@ layout = html.Div([
         
                 children="Block 2",className="box2",
                        style={
-                        'backgroundColor':'darkslategray',
-                        'color':'lightsteelblue',
-                        'height':'100px',
-                        'margin-left':'10px',
+                        #'backgroundColor':'darkslategray',
+                        #'color':'lightsteelblue',
+                        #'height':'100px',
+                        #'margin-left':'10px',
                         'text-align':'center',
-                        'width':'40%',
+                        'width':'50%',
                         'display':'inline-block'
                }),
                         ]),
