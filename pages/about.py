@@ -37,9 +37,9 @@ layout = html.Div([
                         'width':'49%',
                         'display':'inline-block'
                }),
-                ]),
-         
-         html.Div(children=[
+            
+            
+            html.Div(children=[
                
                html.P('Kiman Park, Ph.D.:',
                        style={'textAlign': 'center','font-weight': 'bold'}),
@@ -57,6 +57,9 @@ layout = html.Div([
                         'text-align':'center',
                         'display':'inline-block'
                         }),
+            ]),
+         
+         
         
         
         
