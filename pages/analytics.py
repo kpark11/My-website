@@ -2,13 +2,6 @@
 # coding: utf-8
 
 
-import dash
-from dash import dcc
-from dash import html
-from dash.dependencies import Input, Output
-import pandas as pd
-import plotly.graph_objs as go
-import plotly.express as px
 
 
 
@@ -60,6 +53,8 @@ layout = html.Div([
 ])
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
+
+
 @callback(
     Output(component_id='select-year', component_property='disabled'),
     Input(component_id='dropdown-statistics',component_property='value'))
