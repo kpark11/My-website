@@ -35,6 +35,32 @@ year_list = [i for i in range(1980, 2024, 1)]
 
 
 layout = html.Div([
+    html.H1('This is our Analytics page'),
+    html.H2('This is our Analytics page',style={'textAlign': 'center', 'color': '#FF8903'}),
+    html.Div([
+        "Select a city: ",
+        dcc.RadioItems(
+            options=['New York City', 'Montreal', 'San Francisco'],
+            value='Montreal',
+            id='analytics-input'
+        )
+    ]),
+    html.Br(),
+    html.Div(id='analytics-output'),
+])
+@callback(
+    Output('analytics-output', 'children'),
+    Input('analytics-input', 'value')
+)
+def update_city_selected(input_value):
+    return f'You selected: {input_value}'
+
+
+
+
+'''
+
+layout = html.Div([
     #TASK 2.1 Add title to the dashboard
     html.H1("Automobile Statistics Dashboard"),#May include style for title
     html.P("This is from the Coursera exercise."),
@@ -167,3 +193,4 @@ def update_output_container(selected_statistics, input_year):
     else:
         return None
 
+'''
