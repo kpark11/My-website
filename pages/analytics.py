@@ -4,6 +4,14 @@
 
 
 
+import dash
+from dash import html, dcc
+import pandas as pd
+from dash.dependencies import Input, Output
+import pandas as pd
+import plotly.graph_objs as go
+import plotly.express as px
+
 
 dash.register_page(__name__)
 
