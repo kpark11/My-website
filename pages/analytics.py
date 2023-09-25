@@ -5,7 +5,7 @@
 
 
 import dash
-from dash import html, dcc
+from dash import html, dcc, callback
 import pandas as pd
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
@@ -31,34 +31,6 @@ dropdown_options = [
 year_list = [i for i in range(1980, 2024, 1)]
 #---------------------------------------------------------------------------------------
 
-
-
-
-layout = html.Div([
-    html.H1('This is our Analytics page'),
-    html.H2('This is our Analytics page',style={'textAlign': 'center', 'color': '#FF8903'}),
-    html.Div([
-        "Select a city: ",
-        dcc.RadioItems(
-            options=['New York City', 'Montreal', 'San Francisco'],
-            value='Montreal',
-            id='analytics-input'
-        )
-    ]),
-    html.Br(),
-    html.Div(id='analytics-output'),
-])
-@callback(
-    Output('analytics-output', 'children'),
-    Input('analytics-input', 'value')
-)
-def update_city_selected(input_value):
-    return f'You selected: {input_value}'
-
-
-
-
-'''
 
 layout = html.Div([
     #TASK 2.1 Add title to the dashboard
@@ -88,21 +60,14 @@ layout = html.Div([
 # Define the callback function to update the input container based on the selected statistics
 
 
-@callback(
-    Output(component_id='select-year', component_property='disabled'),
-    Input(component_id='dropdown-statistics',component_property='value'))
 
-def update_input_container(selected_statistics):
-    if selected_statistics =='Yearly Statistics': 
-        return False
-    else: 
-        return True
 
 #Callback for plotting
 # Define the callback function to update the input container based on the selected statistics
 @callback(
     Output(component_id='output-container', component_property='children'),
-    [Input(component_id='dropdown-statistics', component_property='value'), Input(component_id='select-year', component_property='value')])
+    [Input(component_id='dropdown-statistics', component_property='value'), Input(component_id='select-year', component_property='value')]
+)
 
 
 def update_output_container(selected_statistics, input_year):
@@ -192,5 +157,3 @@ def update_output_container(selected_statistics, input_year):
         
     else:
         return None
-
-'''
