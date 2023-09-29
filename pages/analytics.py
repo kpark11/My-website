@@ -16,14 +16,14 @@ dash.register_page(__name__)
 
 
 layout = html.Div([
-    
+    html.H1("Our projects: ", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}),
     html.Div([
         html.Div(
-             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"],style={'textAlign':'center'})
+             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"]),style={'textAlign':'center'}
                 ) for page in dash.page_registry.values()
             if page["name"].startswith("Pages")
         
         ]),
             dash.page_container
     
-    ])
+])
