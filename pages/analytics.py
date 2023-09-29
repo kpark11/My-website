@@ -33,6 +33,15 @@ year_list = [i for i in range(1980, 2024, 1)]
 
 
 layout = html.Div([
+    
+    html.Div([
+        html.Div(
+             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
+                ) for page in dash.page_registry.values()
+            ]),
+            dash.page_container,
+    
+    html.Div([
     #TASK 2.1 Add title to the dashboard
     html.H2("Automobile Statistics Dashboard",style={'textAlign': 'center', 'color': '#FF8903'}),#May include style for title
     html.P("This is from the Coursera exercise.",style={'textAlign':'center'}),
