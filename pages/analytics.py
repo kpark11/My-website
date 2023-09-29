@@ -36,9 +36,11 @@ layout = html.Div([
     
     html.Div([
         html.Div(
-             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
+             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"],style={'textAlign':'center'})
                 ) for page in dash.page_registry.values()
-            ]),
+            
+        
+        ]),
             dash.page_container,
     
     html.Div([
@@ -64,6 +66,7 @@ layout = html.Div([
         )),
     html.Div([#TASK 2.3: Add a division for output display
     html.Div(id='output-container', className='chart-grid', style={'display':'flex'})])
+])
 ])
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
