@@ -38,7 +38,7 @@ layout = html.Div([
         html.Div(
              dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"],style={'textAlign':'center'})
                 ) for page in dash.page_registry.values()
-            
+            if page["path"].startswith("/analytic-pages")
         
         ]),
             dash.page_container,
