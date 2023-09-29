@@ -15,7 +15,7 @@ import plotly.express as px
 
 
 
-dash.register_page(__name__,path='/pages/analytic-pages/Automobile')
+dash.register_page(__name__,path='/analytic-pages/Automobile')
 
 
 
