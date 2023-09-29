@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[24]:
+# In[4]:
 
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
@@ -26,12 +26,11 @@ import datetime
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX],pages_folder="/opt/render/project/src/pages")
 
-server = app.server
+#server = app.server
 
 app.title = "Kiman and Abby Park"
 app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
-
 app.layout = html.Div([
     html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
     html.Div([
@@ -40,7 +39,7 @@ app.layout = html.Div([
                 ) for page in dash.page_registry.values()
             ]),
             dash.page_container
-    ])
+    )
 
     
     
