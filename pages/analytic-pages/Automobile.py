@@ -15,7 +15,7 @@ import plotly.express as px
 
 
 
-dash.register_page(__name__,path='/analytic-pages/Automobile')
+dash.register_page(__name__,path='/analytic-pages/')
 
 
 
@@ -40,7 +40,7 @@ layout = html.Div([
     html.Div([
         html.Div(
              dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
-                ) for page in dash.page_registry.values()
+                ) for page in dash.page_registry['pages.analytic-pages'].values()
             ]),
             dash.page_container,
     
