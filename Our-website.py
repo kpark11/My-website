@@ -38,7 +38,7 @@ app.layout = html.Div([
         html.Div(
              dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
                 ) for page in dash.page_registry.values()
-            if not page["path"].startswith("\Pages")
+            if not page["path"].startswith("Pages")
             ]),
             dash.page_container
     ])
