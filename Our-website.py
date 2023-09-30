@@ -22,14 +22,14 @@ app.title = "Kiman and Abby Park"
 app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
 
-#background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true'
+background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true'
 
 app.layout = html.Div([
     
     html.Div(style={
       'verticalAlign':'middle',
       'textAlign': 'center',
-      'background-image':'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true',
+      ,
       
       'position':'fixed',
       'width':'100%',
@@ -40,7 +40,8 @@ app.layout = html.Div([
       'opacity': '0.2'
         }),
     
-    html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
+    html.H1("Kiman and Abby Park",
+            style={'textAlign': 'center', 'color': '#3E57B0','font-size':50,'background-image':background,'background-size':'100%'}), 
         html.Div([
             html.Div(
                 dcc.Link(f"{page['name']}", href=page["path"])
