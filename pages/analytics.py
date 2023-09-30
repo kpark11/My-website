@@ -13,8 +13,8 @@ dash.register_page(__name__,order=1)
 layout = html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Div([
-        html.P(
-             dbc.Navlink("Automobile", href="/projects/automobile",style={'textAlign':'center'})
+        html.Div(
+            dcc.Link('Automobile statistics', href=dash.page_registry['pages.automobile']['path'],style={'textAlign':'center'})
              )
 ]),
 ])
