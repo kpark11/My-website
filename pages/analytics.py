@@ -14,7 +14,7 @@ layout = html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Div([
            html.Div(children=[
-               html.P(dcc.Link('Polarization matrix',href='https://reflection-list.onrender.com/')),
+               html.A('Polarization matrix',href='https://reflection-list.onrender.com/',target="_blank"),
                html.P(dcc.Link('Automobile', href=dash.get_relative_path('/projects-automobile'))),
                ],
                style={'textAlign':'center'}            
