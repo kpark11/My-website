@@ -15,7 +15,7 @@ import plotly.express as px
 
 
 
-dash.register_page(__name__)
+dash.register_page(__name__,path='/projects/')
 
 
 
