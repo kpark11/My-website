@@ -22,7 +22,7 @@ app.title = "Kiman and Abby Park"
 app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
 
-background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics.webp?raw=true'
+background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true'
 
 app.layout = html.Div([
     
