@@ -7,7 +7,7 @@ from dash import html, dcc
 import dash_bootstrap_components as dbc
 
 
-dash.register_page(__name__,order=1,location = "sidebar")
+dash.register_page(__name__,order=1)
 
 
 layout = html.Div([
