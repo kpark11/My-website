@@ -22,12 +22,7 @@ background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics
 
 
 app.title = "Kiman and Abby Park"
-app.style = {'textAlign':'center','color':'#503D36','font-size':24,
-          'background-image': 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp',
-          'background-size': '100%',
-          'position': 'fixed',
-          'width': '100%',
-          'height': '100%'}
+app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
 
 
@@ -39,15 +34,16 @@ app.layout = html.Div([
             html.Div(
                 dcc.Link(f"{page['name']}", href=page["path"])
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects")
-                ]),
-            dash.page_container
-    ],
-        style={
+                ],
+            style={
           'background-image': 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp',
           'background-size': '100%',
           'position': 'fixed',
           'width': '100%',
-          'height': '100%'})
+          'height': '100%'}
+            ),
+            dash.page_container
+    ])
 
     
 if __name__ == '__main__':
