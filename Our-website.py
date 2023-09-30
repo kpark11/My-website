@@ -15,9 +15,9 @@ import os
 
 image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics.webp?raw=true'
 
-app = dash.Dash(external_stylesheets=[dbc.themes.LUX])#,pages_folder="/opt/render/project/src/pages")
+app = dash.Dash(external_stylesheets=[dbc.themes.LUX]),pages_folder="/opt/render/project/src/pages")
 
-#server = app.server
+server = app.server
 
 app.title = "Kiman and Abby Park"
 app.style = {'textAlign':'center','color':'#503D36','font-size':24}
