@@ -26,22 +26,9 @@ background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics
 
 app.layout = html.Div([
     
-    html.Div(style={
-      'verticalAlign':'middle',
-      'textAlign': 'center',
-      ,
-      
-      'position':'fixed',
-      'width':'100%',
-      'height':'100%',
-      'top':'0px',
-      'left':'0px',
-      'z-index':'1',
-      'opacity': '0.2'
-        }),
-    
     html.H1("Kiman and Abby Park",
-            style={'textAlign': 'center', 'color': '#3E57B0','font-size':50,'background-image':background,'background-size':'100%'}), 
+            style={'textAlign': 'center', 'color': '#3E57B0','font-size':50,
+                   'background-image':background,'background-size':'100%'}), 
         html.Div([
             html.Div(
                 dcc.Link(f"{page['name']}", href=page["path"])
