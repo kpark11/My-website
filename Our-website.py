@@ -14,13 +14,7 @@ import dash_bootstrap_components as dbc
 import os
 
 cwd = os.getcwd()
-
-print(cwd)
-
 directors = os.listdir()
-
-print(directors)
-
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX],pages_folder="/opt/render/project/src/pages")
 
