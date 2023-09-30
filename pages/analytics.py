@@ -2,8 +2,6 @@
 # coding: utf-8
 
 
-
-
 import dash
 from dash import html, dcc
 
@@ -21,6 +19,5 @@ layout = html.Div([
                 ) for page in dash.page_registry.values() 
         if page["path"].startswith("/projects")
     ]),
-    dash.page_container,
     
 ])
