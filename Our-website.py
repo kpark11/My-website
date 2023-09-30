@@ -23,7 +23,7 @@ background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics
 
 app.title = "Kiman and Abby Park"
 app.style = {'textAlign':'center','color':'#503D36','font-size':24,
-          'background-image': background,
+          'background-image': 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp',
           'background-size': '100%',
           'position': 'fixed',
           'width': '100%',
@@ -41,7 +41,13 @@ app.layout = html.Div([
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects")
                 ]),
             dash.page_container
-    ])
+    ],
+        style={
+          'background-image': 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp',
+          'background-size': '100%',
+          'position': 'fixed',
+          'width': '100%',
+          'height': '100%'})
 
     
 if __name__ == '__main__':
