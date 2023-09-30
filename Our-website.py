@@ -35,7 +35,7 @@ app.layout = html.Div([
                 ]),
             dash.page_container
     ],
-        style={'background-image': 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true',
+        style={'background-image': 'url(/assets/image.jpg)',
           'background-size': '100%',}
 )
 
