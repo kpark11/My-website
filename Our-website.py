@@ -27,16 +27,20 @@ background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics
 app.layout = html.Div([
     
     html.H1("Kiman and Abby Park",
-            style={'textAlign': 'center', 'color': '#3E57B0','font-size':50,
-                   'background-image':'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true',
-                   'background-size':'100%'}), 
+            style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
         html.Div([
             html.Div(
                 dcc.Link(f"{page['name']}", href=page["path"])
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects")
                 ]),
             dash.page_container
-    ])
+    ],
+        style={'background-image': background,
+          'background-size': '100%',
+          'position': 'fixed',
+          'width': '100%',
+          'height': '100%'
+          })
 
     
 if __name__ == '__main__':
