@@ -35,7 +35,7 @@ app.layout = html.Div([
                 ]),
             dash.page_container
     ],
-        style={'background-image': 'url(/assets/image.jpg)',
+        style={'background-image': 'url(/assets/statistics-major.webp)',
           'background-size': '100%',}
 )
 
