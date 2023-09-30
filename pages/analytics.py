@@ -5,11 +5,7 @@
 
 
 import dash
-from dash import html, dcc, callback
-import pandas as pd
-from dash.dependencies import Input, Output
-import plotly.graph_objs as go
-import plotly.express as px
+from dash import html, dcc
 
 
 dash.register_page(__name__)
@@ -17,11 +13,13 @@ dash.register_page(__name__)
 
 layout = html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
+    html.Br(),
+    html.Br(),
     html.Div([
-    html.Div(
-         dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"],style={'textAlign':'center'})
-            ) for page in dash.page_registry.values() 
-    if page["path"].startswith("/projects")
+        html.Div(
+             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"],style={'textAlign':'center'})
+                ) for page in dash.page_registry.values() 
+        if page["path"].startswith("/projects")
     ]),
     dash.page_container,
     
