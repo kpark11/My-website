@@ -5,7 +5,7 @@
 import dash
 from dash import html,dcc
 
-dash.register_page(__name__,order=3)
+dash.register_page(__name__,order=3,location = "sidebar")
 
 layout = html.Div([
     html.H2('This is our Archive page',style={'textAlign': 'center', 'color': '#FF8903'}),
