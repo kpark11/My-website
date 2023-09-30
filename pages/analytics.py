@@ -7,9 +7,9 @@ from dash import html, dcc
 
 
 dash.register_page(__name__,order=1)
-dash.get_app
+app = dash.get_app
 
-layout = html.Div([
+app.layout = html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Div([
             html.Div(
