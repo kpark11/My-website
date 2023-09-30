@@ -35,14 +35,12 @@ app.layout = html.Div([
           'height':'100%',
           'top':'0px',
           'left':'0px',
-          'z-index':'1000',
+          'z-index':'0',
           'opacity': '0.2'
             })
     ]),
     
     html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
-    html.P(print(cwd)),
-    html.P(print(directors)),
         html.Div([
             html.Div(
                 dcc.Link(f"{page['name']}", href=page["path"])
