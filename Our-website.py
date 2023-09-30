@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[21]:
+# In[29]:
 
 
 ### This program for Kiman and Abby to utilize the internet space for jobs, projects, and data visualizations. ###
@@ -26,11 +26,11 @@ background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics
 
 app.layout = html.Div([
     
-    html.Img(src=background,
+    html.Div(
     style={
           'verticalAlign':'middle',
           'textAlign': 'center',
-          #'background-image':image,
+          'background-image':background,
           'position':'fixed',
           'width':'100%',
           'height':'100%',
@@ -38,8 +38,9 @@ app.layout = html.Div([
           'left':'0px',
           'z-index':'1',
           'opacity': '0.2'
-            }),
-    
+            },
+    ),
+        
     html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
         html.Div([
             html.Div(

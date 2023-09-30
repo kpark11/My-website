@@ -22,7 +22,8 @@ layout = html.Div([
                 'textAlign': "center",
                 'margin': "0 auto",
                'display': 'block',
-              'margin-left': '0',
+               'z-index':'2',
+              'margin-left': 'auto',
               'margin-right': 'auto'}),
 ])
 
