@@ -10,6 +10,7 @@ dash.register_page(__name__, path='/',order=0)
 
 
 image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman-Abby.jpeg?raw=true'
+background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true'
 
 layout = html.Div([
         html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
@@ -24,5 +25,7 @@ layout = html.Div([
                'display': 'block',
               'margin-left': 'auto',
               'margin-right': 'auto'}),
-])
+],
+     style={'background-image': background,
+          'background-size': '100%',})
 

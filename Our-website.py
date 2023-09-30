@@ -34,10 +34,7 @@ app.layout = html.Div([
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects")
                 ]),
             dash.page_container
-    ],
-        style={'background-image': 'url(/assets/statistics-major.webp)',
-          'background-size': '100%',}
-)
+    ])
 
     
 if __name__ == '__main__':
