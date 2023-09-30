@@ -18,7 +18,10 @@ layout = html.Div([
     html.P(print(cwd)),
     html.Div([
            html.Div(
-                dcc.Link('Automobile', href=dash.get_relative_path('/projects-automobile')),style={'textAlign':'center'}
+                dcc.Link('Automobile', href=dash.get_relative_path('/projects-automobile')),
+                html.Br(),
+                dcc.Link('/projects/Automobile', href=dash.get_relative_path('/projects/automobile')),
+                style={'textAlign':'center'}
                 ) #for page in dash.page_registry.values() if page["path"].startswith("/projects/")
         
         
