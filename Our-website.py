@@ -13,7 +13,6 @@ from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 import os
 
-image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics.webp?raw=true'
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX]),pages_folder="/opt/render/project/src/pages")
 
@@ -23,9 +22,11 @@ app.title = "Kiman and Abby Park"
 app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
 
+background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics.webp?raw=true'
+
 app.layout = html.Div([
     
-    html.Div([html.Img(src=image_path,
+    html.Div([html.Img(src=background,
     style={
           'verticalAlign':'middle',
           'textAlign': 'center',
