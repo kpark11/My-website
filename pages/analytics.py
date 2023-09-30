@@ -15,9 +15,9 @@ layout = html.Div([
     html.Br(),
     html.Div([
         html.Div(
-             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"],style={'textAlign':'center'})
+             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
                 ) for page in dash.page_registry.values() 
         if page["path"].startswith("/projects")
     ]),
-    
+    dash.page_container()
 ])
