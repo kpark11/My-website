@@ -8,20 +8,9 @@
 
 
 import dash
-from dash import dcc,State,html
+from dash import dcc,html
 from dash.dependencies import Input, Output
-import pandas as pd
-import numpy as np
-import plotly.graph_objs as go
-import plotly.express as px
-import os
-import re
-import sys
-import fnmatch
-import matplotlib.pyplot as plt
-import base64
 import dash_bootstrap_components as dbc
-import datetime
 
 
 app = dash.Dash(external_stylesheets=[dbc.themes.LUX],pages_folder="/opt/render/project/src/pages")
