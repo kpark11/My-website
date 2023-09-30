@@ -10,7 +10,7 @@ import dash_bootstrap_components as dbc
 dash.register_page(__name__,order=1)
 
 
-test = dash.page_registry["path"]
+test = dash.page_registry
 
 layout = html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
