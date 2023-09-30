@@ -25,7 +25,7 @@ app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
 
 app.layout = html.Div([
-    html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
+    html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50,'backgroundColor':'blue'}), 
     html.P(print(cwd)),
     html.P(print(directors)),
         html.Div([
