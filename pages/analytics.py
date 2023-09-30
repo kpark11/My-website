@@ -16,7 +16,9 @@ dash.register_page(__name__)
 
 
 layout = html.Div([
+    html.Div([
     html.H1("Our projects: ", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}),
+    ]),
     html.Div([
         html.Div(
              dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"]),style={'textAlign':'center'}
