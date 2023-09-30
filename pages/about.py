@@ -9,7 +9,7 @@ import dash
 from dash import dcc,State,html
 
 
-dash.register_page(__name__)
+dash.register_page(__name__,order=2)
 
 layout = html.Div([
         html.H2("About us:",

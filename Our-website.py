@@ -25,7 +25,8 @@ app.layout = html.Div([
     html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
     html.Div([
         html.Div(
-             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"])
+             dcc.Link(f"{page['name']}# - {page['path']}"
+                      , href=page["relative_path"])
                 ) for page in dash.page_registry.values()
             if not page["path"].startswith("/projects")
             ]),
