@@ -22,7 +22,7 @@ layout = html.Div([
            html.Br(),
            html.Br(),
            html.Div(
-               html.A('More in the github',href='https://github.com/kpark11',target='_blank'),
+               html.A('More in Github',href='https://github.com/kpark11',target='_blank'),
                style={'textAlign': 'center'},),
         
          #   html.Div(
