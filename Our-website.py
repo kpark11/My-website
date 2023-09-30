@@ -28,7 +28,8 @@ app.layout = html.Div([
     
     html.H1("Kiman and Abby Park",
             style={'textAlign': 'center', 'color': '#3E57B0','font-size':50,
-                   'background-image':background,'background-size':'100%'}), 
+                   'background-image':'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true',
+                   'background-size':'100%'}), 
         html.Div([
             html.Div(
                 dcc.Link(f"{page['name']}", href=page["path"])
