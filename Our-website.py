@@ -26,7 +26,7 @@ background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics
 
 app.layout = html.Div([
     
-    html.Div(
+    html.Div(html.P(
     style={
           'verticalAlign':'middle',
           'textAlign': 'center',
@@ -39,7 +39,7 @@ app.layout = html.Div([
           'z-index':'1',
           'opacity': '0.2'
             },
-    ),
+    )),
         
     html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
         html.Div([
