@@ -4,6 +4,7 @@
 
 import dash
 from dash import html, dcc
+import dash_bootstrap_components as dbc
 
 
 dash.register_page(__name__,order=1,location = "sidebar")
@@ -13,7 +14,7 @@ layout = html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Div([
         html.P(
-             dcc.Link("Automobile", href="/projects/",style={'textAlign':'center'})
+             dbc.Navlink("Automobile", href="/projects/automobile",style={'textAlign':'center'})
              )
 ]),
 ])
