@@ -16,16 +16,11 @@ dash.register_page(__name__)
 
 
 layout = html.Div([
-    html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
-    ]),
-    html.Div([
-        html.Div(
-             dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"]),
-                 style={'textAlign':'center'}
-                ) for page in dash.page_registry.values() 
-        if page["name"].startswith("pages")
-        ]),
+    html.Div(
+         dcc.Link(f"{page['name']} - {page['path']}", href=page["relative_path"]),
+             style={'textAlign':'center'}
+            ) for page in dash.page_registry.values() 
+    if page["name"].startswith("pages")
     dash.page_container,
-    
 ])
