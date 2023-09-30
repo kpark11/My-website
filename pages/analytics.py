@@ -14,7 +14,7 @@ layout = html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Div([
         html.Div(
-            dcc.Link('Automobile statistics', href=dash.page_registry['pages.automobile']['path'],style={'textAlign':'center'})
+            dcc.Link('Automobile statistics', href=dash.page_registry['projects.automobile']['path'],style={'textAlign':'center'})
              )
 ]),
 ])
