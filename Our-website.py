@@ -24,7 +24,12 @@ app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 
 background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true'
 
-app.layout = html.Div([
+app.layout = html.Div(style={'background-image': background,
+          'background-size': '100%',
+          'position': 'fixed',
+          'width': '100%',
+          'height': '100%'},
+[
     
     html.H1("Kiman and Abby Park",
             style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
