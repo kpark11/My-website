@@ -13,8 +13,7 @@ layout = html.Div([
     html.H2('This is our Projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Div([
         html.P(
-             dcc.Link(f"{page['name']}", href=page["relative_path"],style={'textAlign':'center'})
-                ) for page in dash.page_registry.values() if page["location"] != "sidebar"
-        if page["path"].startswith("/projects")
-    ])
+             dcc.Link("Automobile", href="/projects/",style={'textAlign':'center'})
+             )
+]),
 ])
