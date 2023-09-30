@@ -39,6 +39,9 @@ layout = html.Div([
     #TASK 2.1 Add title to the dashboard
     html.H2("Automobile Statistics Dashboard",style={'textAlign': 'center', 'color': '#FF8903'}),#May include style for title
     html.P("This is from the Coursera exercise.",style={'textAlign':'center'}),
+    html.P("You can visualize automobile statistics by yearly or during recession",style={'textAlign':'center'}),
+    html.P("For recession, you do not need to select a year.",style={'textAlign':'center'}),
+
     html.Div([#TASK 2.2: Add two dropdown menus
         html.Label("Select Statistics:"),
         dcc.Dropdown(
