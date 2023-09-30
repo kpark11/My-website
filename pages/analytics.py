@@ -17,9 +17,13 @@ layout = html.Div([
                html.A('Polarization matrix',href='https://reflection-list.onrender.com/',target="_blank"),
                html.P(dcc.Link('Automobile', href=dash.get_relative_path('/projects-automobile'))),
                ],
-               style={'textAlign':'center'}            
-                ) #for page in dash.page_registry.values() if page["path"].startswith("/projects/")
-        
+               style={'textAlign':'center'}
+                ), #for page in dash.page_registry.values() if page["path"].startswith("/projects/")
+           html.Br(),
+           html.Br(),
+           html.Div(
+               html.A('More in the github',href='https://github.com/kpark11',target='_blank'),
+               style={'textAlign': 'center'},),
         
          #   html.Div(
          #       dcc.Link(f"{page['name']}", href=dash.get_relative_path('/projects/autombile'))
