@@ -36,7 +36,7 @@ app.layout = html.Div([
           'height':'100%',
           'top':'0px',
           'left':'0px',
-          'z-index':'0',
+          'z-index':'auto',
           'opacity': '0.2'
             })
     ]),
