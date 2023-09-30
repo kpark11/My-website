@@ -24,7 +24,7 @@ app.title = "Kiman and Abby Park"
 app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
 
-app.layout = html.Div([
+app.layout = html.Div([style={'backgroundColor':'#D4FFFF'},
     html.H1("Kiman and Abby Park", style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
     html.P(print(cwd)),
     html.P(print(directors)),
@@ -34,8 +34,8 @@ app.layout = html.Div([
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects")
         ]),
             dash.page_container
-    ]),
-    style={'backgroundColor':'#D4FFFF'},
+    ])
+    
 
     
     
