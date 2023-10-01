@@ -67,7 +67,8 @@ layout = html.Div([
                     'display':'flex',
                     'margin-left':'10px',
                     'width':'49%',
-                    'display':'inline-block'})],
+                    #'display':'inline-block'
+                    })],
             type="circle"),),
     
     html.Div(dcc.Loading(id="output-loading-2",
@@ -76,7 +77,8 @@ layout = html.Div([
                     'display':'flex',
                     'margin-left':'10px',
                     'width':'49%',
-                    'display':'inline-block'})],
+                    #'display':'inline-block'
+                    })],
             type="circle"),)
      ]),
 ])
@@ -142,14 +144,14 @@ def update_output_container(selected_statistics, input_year):
                                 'textAlign':'center',
                                 'margin-left':'10px',
                                 'width':'49%',
-                                #'display':'inline-block'}
+                                #'display':'inline-block'
                                 }),
             html.Div(className='chart-item', children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],
                      style={'display': 'flex',
                                 'textAlign':'center',
                                 'margin-left':'10px',
                                 'width':'49%',
-                                #'display':'inline-block'}
+                                #'display':'inline-block'
                                 })
             ]
  # Yearly Statistic Report Plots                             
@@ -193,14 +195,14 @@ def update_output_container(selected_statistics, input_year):
                                 'textAlign':'center',
                                 'margin-left':'10px',
                                 'width':'49%',
-                                #'display':'inline-block'}
+                                #'display':'inline-block'
                                 }),
                 html.Div(className='chart-item', children=[html.Div(Y_chart3),html.Div(Y_chart4)],
                          style={'display': 'flex',
                                 'textAlign':'center',
                                 'margin-left':'10px',
                                 'width':'49%',
-                                #'display':'inline-block'}
+                                #'display':'inline-block'
                                 })
                 ]
         
