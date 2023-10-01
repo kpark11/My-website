@@ -61,16 +61,16 @@ layout = html.Div([
         )),
     
     html.Div([
-    dcc.Loading(id="output-loading-1",
+    html.Div(dcc.Loading(id="output-loading-1",
                 children=[html.Div(id='output-container1', className='chart-grid', 
              style={'textAlign':'center','display':'flex'})],
-            type="circle"),
+            type="circle"),),
     
-    dcc.Loading(id="output-loading-2",
+    html.Div(dcc.Loading(id="output-loading-2",
                 children=[html.Div(id='output-container2', className='chart-grid', 
              style={'textAlign':'center','display':'flex'})],
-            type="circle")
-    ], style={'textAlign':'center','display':'flex'}),
+            type="circle"),)
+     ]),
 ])
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
