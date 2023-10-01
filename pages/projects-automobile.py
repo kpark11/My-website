@@ -59,7 +59,6 @@ layout = html.Div([
             value='Yearly Statistics',
             placeholder='Select Years'
         )),
-    
     html.Div([
     html.Div(dcc.Loading(id="output-loading-1",
                 children=[html.Div(id='output-container1', className='chart-grid', 
@@ -70,17 +69,6 @@ layout = html.Div([
                     #'display':'inline-block'
                     })],
             type="circle"),),
-    ]),
-    html.Div([
-    html.Div(dcc.Loading(id="output-loading-2",
-                children=[html.Div(id='output-container2', className='chart-grid', 
-             style={'textAlign':'center',
-                    'display':'flex',
-                    'margin-left':'10px',
-                    'width':'49%',
-                    #'display':'inline-block'
-                    })],
-            type="circle"),)
      ]),
 ])
 #TASK 2.4: Creating Callbacks
@@ -92,8 +80,7 @@ layout = html.Div([
 #Callback for plotting
 # Define the callback function to update the input container based on the selected statistics
 @callback(
-    [Output(component_id='output-loading-1', component_property='children'),
-     Output(component_id='output-loading-2', component_property='children')],
+    Output(component_id='output-loading-1', component_property='children'),
     [Input(component_id='dropdown-statistics', component_property='value'), Input(component_id='select-year', component_property='value')]
 )
 
