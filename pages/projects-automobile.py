@@ -63,12 +63,20 @@ layout = html.Div([
     html.Div([
     html.Div(dcc.Loading(id="output-loading-1",
                 children=[html.Div(id='output-container1', className='chart-grid', 
-             style={'textAlign':'center','display':'flex'})],
+             style={'textAlign':'center',
+                    'display':'flex',
+                    'margin-left':'10px',
+                    'width':'49%',
+                    'display':'inline-block'})],
             type="circle"),),
     
     html.Div(dcc.Loading(id="output-loading-2",
                 children=[html.Div(id='output-container2', className='chart-grid', 
-             style={'textAlign':'center','display':'flex'})],
+             style={'textAlign':'center',
+                    'display':'flex',
+                    'margin-left':'10px',
+                    'width':'49%',
+                    'display':'inline-block'})],
             type="circle"),)
      ]),
 ])
@@ -129,8 +137,20 @@ def update_output_container(selected_statistics, input_year):
 
 #TASK 2.6: Returning the graphs for displaying Recession data
         return [
-            html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],style={'display': 'flex'}),
-            html.Div(className='chart-item', children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],style={'display': 'flex'})
+            html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],
+                     style={'display': 'flex',
+                                'textAlign':'center',
+                                'margin-left':'10px',
+                                'width':'49%',
+                                #'display':'inline-block'}
+                                }),
+            html.Div(className='chart-item', children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],
+                     style={'display': 'flex',
+                                'textAlign':'center',
+                                'margin-left':'10px',
+                                'width':'49%',
+                                #'display':'inline-block'}
+                                })
             ]
  # Yearly Statistic Report Plots                             
     elif (input_year and selected_statistics=='Yearly Statistics'):
@@ -168,8 +188,20 @@ def update_output_container(selected_statistics, input_year):
 
 #TASK 2.6: Returning the graphs for displaying Yearly data
         return [
-                html.Div(className='chart-item', children=[html.Div(Y_chart1),html.Div(Y_chart2)],style={'display': 'flex'}),
-                html.Div(className='chart-item', children=[html.Div(Y_chart3),html.Div(Y_chart4)],style={'display': 'flex'})
+                html.Div(className='chart-item', children=[html.Div(Y_chart1),html.Div(Y_chart2)],
+                         style={'display': 'flex',
+                                'textAlign':'center',
+                                'margin-left':'10px',
+                                'width':'49%',
+                                #'display':'inline-block'}
+                                }),
+                html.Div(className='chart-item', children=[html.Div(Y_chart3),html.Div(Y_chart4)],
+                         style={'display': 'flex',
+                                'textAlign':'center',
+                                'margin-left':'10px',
+                                'width':'49%',
+                                #'display':'inline-block'}
+                                })
                 ]
         
     else:
