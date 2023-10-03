@@ -24,15 +24,6 @@ background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics
 app.title = "Kiman and Abby Park"
 app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
-background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true'
-'''
-style={
-          'background-image': 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp',
-          'background-size': '100%',
-          'position': 'fixed',
-          'width': '100%',
-          'height': '100%'}
-'''
 
 app.layout = html.Div([
     
