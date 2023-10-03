@@ -59,12 +59,12 @@ layout = html.Div([
             value='Yearly Statistics',
             placeholder='Select Years'
         )),
-    html.Div([
+    #html.Div([
     html.Div(dcc.Loading(id="output-loading-1",
                 children=[html.Div(id='output-container1', className='chart-grid', 
              style={'display':'flex'})],
             type="circle"),),
-     ]),
+     #]),
 ])
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
