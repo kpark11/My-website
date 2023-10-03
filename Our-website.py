@@ -42,7 +42,7 @@ app.layout = html.Div([
             html.Div(
                 dcc.Link(f"{page['name']}", href=page["path"])
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects")
-                ]),
+                ], style={'display':'inline-block','padding': 10, 'flex': 1}),
             dash.page_container
     ])
     
