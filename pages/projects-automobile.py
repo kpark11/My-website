@@ -78,8 +78,7 @@ layout = html.Div([
              style={'display':'flex'})],
             type="circle")
      #]),
-],
-    style={"overflow": "scroll"})
+])
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
 

@@ -44,14 +44,7 @@ app.layout = html.Div([
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects")
                 ]),
             dash.page_container
-    ],
-        style={
-          'background-image': 'url(https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp)',
-          'background-size': '100%',
-          'position': 'fixed',
-          'width': '100%',
-          'height': '100%'})
-
+    ])
     
 if __name__ == '__main__':
     app.run_server(debug=True)
