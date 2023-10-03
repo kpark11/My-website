@@ -40,7 +40,7 @@ app.layout = html.Div([
             style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
         html.Div([
             html.Div(
-                dcc.Link(f"{page['name']}      ", href=page["path"])
+                dcc.Link(f"{page['name']}" + '   ', href=page["path"])
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects")
                 ], style={'display':'flex','padding': '5'}),
             dash.page_container
