@@ -63,7 +63,7 @@ layout = html.Div([
     html.Div(dcc.Loading(id="output-loading-1",
                 children=[html.Div(id='output-container1', className='chart-grid', 
              style={'display':'flex'})],
-            type="circle"),),
+            type="circle"),)
      #]),
 ])
 #TASK 2.4: Creating Callbacks
