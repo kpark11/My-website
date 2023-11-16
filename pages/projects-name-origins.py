@@ -15,6 +15,29 @@ import string
 from dash import html,dcc,Input,Output,callback
 
 
+import torch.nn as nn
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(RNN, self).__init__()
+
+        self.hidden_size = hidden_size
+
+        self.i2h = nn.Linear(input_size + hidden_size, hidden_size)
+        self.h2o = nn.Linear(hidden_size, output_size)
+        self.softmax = nn.LogSoftmax(dim=1)
+
+    def forward(self, input, hidden):
+        combined = torch.cat((input, hidden), 1)
+        hidden = self.i2h(combined)
+        output = self.h2o(hidden)
+        output = self.softmax(output)
+        return output, hidden
+
+    def initHidden(self):
+        return torch.zeros(1, self.hidden_size)
+
+
 
 
 dash.register_page(__name__)
@@ -22,40 +45,22 @@ dash.register_page(__name__)
 
 
 
-layout = html.Div([
-    html.H2('This predicts the origin of the name',style={'textAlign': 'center', 'color': '#FF8903'}),
-    html.Br(),
-    html.Div('This is based on Sean Robert https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html',style={'textAlign':'center'}),
-    html.Br(),
-    html.Div([html.Label("Type your name: "),
-             dcc.Input(
-             id='input',
-            value=0,
-            placeholder=0)],
-            style={'textAlign':'center'}),
-     html.Div([
-        dcc.Loading(id="ls-loading",
-                    children=[
-                        html.Div(id='output-file',className='file',style={'display':'flex'})
-                    ],
-                    type="circle"),]),
-])
-
-@callback(
-    Output(component_id='ls-loading',component_property='children'),
-    Input('input',component_property='value')
-)
-
-def update_input_container(name):    
-    origin = predict(name)
-    return origin
-
-
-rnn = torch.load(r'https://github.com/kpark11/Our-website/tree/main/assets/char-rnn-classification.pt?raw=true')
-
 
 all_letters = string.ascii_letters + " .,;'"
+category_lines = {}
+all_categories = []
+
+n_hidden = 128
 n_letters = len(all_letters)
+n_categories = len(all_categories)
+
+checkpoint = 'https://github.com/kpark11/Our-website/tree/main/assets/char-rnn-classification.pt'
+
+rnn = RNN(n_letters, n_hidden, n_categories)
+rnn.load_state_dict(torch.hub.load_state_dict_from_url(checkpoint, progress=False))
+
+
+
 # Find letter index from all_letters, e.g. "a" = 0
 def letterToIndex(letter):
     return all_letters.find(letter)
@@ -73,6 +78,9 @@ def lineToTensor(line):
     for li, letter in enumerate(line):
         tensor[li][0][letterToIndex(letter)] = 1
     return tensor
+
+
+
 
 
 category_lines = {}
@@ -107,3 +115,31 @@ if __name__ == '__main__':
 '''
 
 
+
+layout = html.Div([
+    html.H2('This predicts the origin of the name',style={'textAlign': 'center', 'color': '#FF8903'}),
+    html.Br(),
+    html.Div('This is based on Sean Robert https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html',style={'textAlign':'center'}),
+    html.Br(),
+    html.Div([html.Label("Type your name: "),
+             dcc.Input(
+             id='input',
+            value=0,
+            placeholder=0)],
+            style={'textAlign':'center'}),
+     html.Div([
+        dcc.Loading(id="ls-loading",
+                    children=[
+                        html.Div(id='output-file',className='file',style={'display':'flex'})
+                    ],
+                    type="circle"),]),
+])
+
+@callback(
+    Output(component_id='ls-loading',component_property='children'),
+    Input('input',component_property='value')
+)
+
+def update_input_container(name):    
+    origin = predict(name)
+    return origin
