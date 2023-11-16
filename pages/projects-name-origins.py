@@ -51,7 +51,7 @@ def update_input_container(name):
     return origin
 
 
-rnn = torch.load(r'https://github.com/kpark11/Our-website/blob/main/assets/char-rnn-classification.pt?raw=true')
+rnn = torch.load(r'https://github.com/kpark11/Our-website/tree/main/assets/char-rnn-classification.pt?raw=true')
 
 
 all_letters = string.ascii_letters + " .,;'"
