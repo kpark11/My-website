@@ -4,18 +4,15 @@ Created on Wed Nov 15 22:39:11 2023
 
 @author: brian
 """
-from io import open
-import glob
-import os
 
-import sys
+#import sys
 import torch
 import dash
 import torch.nn as nn
 import unicodedata
 import string
 
-from dash import html,dcc,Input,Output
+from dash import html,dcc,Input,Output,callback
 
 
 
