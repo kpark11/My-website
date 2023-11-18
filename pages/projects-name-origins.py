@@ -16,7 +16,7 @@ import string
 import random
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
-from dash import html,dcc,Input,Output,callback
+from dash import html,dcc,Input,Output,callback,State
 
 
 
@@ -110,26 +110,6 @@ def randomTrainingExample():
     line_tensor = lineToTensor(line)
     return category, line, category_tensor, line_tensor
 
-for i in range(10):
-    category, line, category_tensor, line_tensor = randomTrainingExample()
-    print('category =', category, '/ line =', line)
-
-
-n_hidden = 128
-n_letters = len(all_letters)
-n_categories = len(all_categories)
-
-checkpoint = r'https://github.com/kpark11/Our-website/tree/main/assets/char-rnn-classification.pt'
-
-rnn = RNN(n_letters, n_hidden, n_categories)
-rnn.load_state_dict(torch.hub.load_state_dict_from_url(checkpoint, progress=False))
-
-
-
-
-# Keep track of correct guesses in a confusion matrix
-confusion = torch.zeros(n_categories, n_categories)
-n_confusion = 10000
 
 # Just return an output given a line
 def evaluate(line_tensor):
@@ -140,34 +120,6 @@ def evaluate(line_tensor):
 
     return output
 
-# Go through a bunch of examples and record which are correctly guessed
-for i in range(n_confusion):
-    category, line, category_tensor, line_tensor = randomTrainingExample()
-    output = evaluate(line_tensor)
-    guess, guess_i = categoryFromOutput(output)
-    category_i = all_categories.index(category)
-    confusion[category_i][guess_i] += 1
-
-# Normalize by dividing every row by its sum
-for i in range(n_categories):
-    confusion[i] = confusion[i] / confusion[i].sum()
-
-# Set up plot
-fig = plt.figure()
-ax = fig.add_subplot(111)
-cax = ax.matshow(confusion.numpy())
-fig.colorbar(cax)
-
-# Set up axes
-ax.set_xticklabels([''] + all_categories, rotation=90)
-ax.set_yticklabels([''] + all_categories)
-
-# Force label at every tick
-ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
-ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
-
-# sphinx_gallery_thumbnail_number = 2
-plt.show()
 
 def predict(line, n_predictions=3):
     output = evaluate(lineToTensor(line))
@@ -241,14 +193,9 @@ if __name__ == '__main__':
 import time
 import math
 
-n_iters = 100000
-print_every = 5000
-plot_every = 1000
 
 
-# Keep track of losses for plotting
-current_loss = 0
-all_losses = []
+
 
 def timeSince(since):
     now = time.time()
@@ -257,30 +204,9 @@ def timeSince(since):
     s -= m * 60
     return '%dm %ds' % (m, s)
 
-start = time.time()
-
-for iter in range(1, n_iters + 1):
-    category, line, category_tensor, line_tensor = randomTrainingExample()
-    output, loss = train(category_tensor, line_tensor)
-    current_loss += loss
-
-    # Print ``iter`` number, loss, name and guess
-    if iter % print_every == 0:
-        guess, guess_i = categoryFromOutput(output)
-        correct = '✓' if guess == category else '✗ (%s)' % category
-        print('%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / n_iters * 100, timeSince(start), loss, line, guess, correct))
-
-    # Add current loss avg to list of losses
-    if iter % plot_every == 0:
-        all_losses.append(current_loss / plot_every)
-        current_loss = 0
-        
         
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
-
-plt.figure()
-plt.plot(all_losses)
 
 
 
@@ -294,6 +220,29 @@ layout = html.Div([
     html.Div('This is based on Sean Robert',style={'textAlign':'center'}),
     html.Div('https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html',style={'textAlign':'center'}),
     html.Br(),
+    html.Br(),
+    html.Div('There are few parameters needed to train: the numer of hidden layers (128 initial size) and learning rate (0.005 initial size)'),
+    html.Br(),
+    html.Div([html.Label("the number of hidden layers :   "),
+             dcc.Input(
+             id='n_hidden',
+            value=128,
+            placeholder=128)],
+            style={'textAlign':'center'}),
+    html.Div([html.Label("learning rate :   "),
+             dcc.Input(
+             id='learning_rate',
+            value=0.005,
+            placeholder=0.005)],
+            style={'textAlign':'center'}),
+     html.Div([html.Label("iterations :   "),
+             dcc.Input(
+             id='iterations',
+            value=100000,
+            placeholder=100000)],
+            style={'textAlign':'center'}),
+    html.Br(),
+    html.Div(html.Button('Train', id='train', n_clicks=0)),
     html.Div([html.Label("Type your name: "),
              dcc.Input(
              id='input',
@@ -308,6 +257,61 @@ layout = html.Div([
                     type="circle"),]),
 ])
 
+
+@callback(
+    Output('container-button-basic', 'children'),
+    Input('train', 'n_clicks'),
+    [State('n_hidden', 'val_hidden'),State('learning_rate','val_rate'),State('iterations','val_iter')],
+    prevent_initial_call=True
+)
+
+
+def update_output(val_hidden, val_rate,val_iter):
+    n_hidden = val_hidden
+    learning_rate = val_rate
+    n_iters = val_iter
+    # Keep track of losses for plotting
+    current_loss = 0
+    all_losses = []
+    print('n_hidden: {}'.format(n_hidden))
+    print('learning rate: {}'.format(learning_rate))
+    print('iterations: {}'.format(n_iters))
+    
+    
+    start = time.time()
+    
+    
+    print_every = 5000
+    plot_every = 1000
+    
+    
+    
+    for iter in range(1, n_iters + 1):
+        category, line, category_tensor, line_tensor = randomTrainingExample()
+        output, loss = train(category_tensor, line_tensor)
+        current_loss += loss
+    
+        # Print ``iter`` number, loss, name and guess
+        if iter % print_every == 0:
+            guess, guess_i = categoryFromOutput(output)
+            correct = '✓' if guess == category else '✗ (%s)' % category
+            print('%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / n_iters * 100, timeSince(start), loss, line, guess, correct))
+    
+        # Add current loss avg to list of losses
+        if iter % plot_every == 0:
+            all_losses.append(current_loss / plot_every)
+            current_loss = 0
+            
+     
+    plt.figure()
+    plt.plot(all_losses)
+
+            
+        
+    return None
+
+
+
 @callback(
     Output(component_id='ls-loading',component_property='children'),
     Input('input',component_property='value')
@@ -316,3 +320,5 @@ layout = html.Div([
 def update_input_container(name):    
     origin = predict(name)
     return origin
+
+
