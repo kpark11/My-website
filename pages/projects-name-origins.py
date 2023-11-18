@@ -52,7 +52,7 @@ for filename in findFiles(r'https://github.com/kpark11/Our-website/tree/main/ass
     lines = readLines(filename)
     category_lines[category] = lines
 
-
+n_categories = len(all_categories)
 
 # Find letter index from all_letters, e.g. "a" = 0
 def letterToIndex(letter):
@@ -71,6 +71,12 @@ def lineToTensor(line):
     for li, letter in enumerate(line):
         tensor[li][0][letterToIndex(letter)] = 1
     return tensor
+
+
+
+
+
+
 
 
 class RNN(nn.Module):
@@ -92,6 +98,14 @@ class RNN(nn.Module):
 
     def initHidden(self):
         return torch.zeros(1, self.hidden_size)
+    
+    
+    
+n_hidden = 128
+rnn = RNN(n_letters, n_hidden, n_categories)
+
+
+
 
 
 def categoryFromOutput(output):
@@ -276,7 +290,7 @@ def update_output(val_hidden, val_rate,val_iter):
     print('n_hidden: {}'.format(n_hidden))
     print('learning rate: {}'.format(learning_rate))
     print('iterations: {}'.format(n_iters))
-    
+    rnn = RNN(n_letters, n_hidden, n_categories)
     
     start = time.time()
     
