@@ -17,6 +17,10 @@ import random
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from dash import html,dcc,Input,Output,callback,State
+import time
+import math
+
+
 
 
 
@@ -46,7 +50,7 @@ def readLines(filename):
     lines = open(filename, encoding='utf-8').read().strip().split('\n')
     return [unicodeToAscii(line) for line in lines]
 
-for filename in findFiles(r'https://github.com/kpark11/Our-website/tree/main/assets/data/data/names/*.txt'):
+for filename in findFiles('/data/data/names/*.txt'):
     category = os.path.splitext(os.path.basename(filename))[0]
     all_categories.append(category)
     lines = readLines(filename)
@@ -125,6 +129,12 @@ def randomTrainingExample():
     return category, line, category_tensor, line_tensor
 
 
+for i in range(10):
+    category, line, category_tensor, line_tensor = randomTrainingExample()
+    print('category =', category, '/ line =', line)
+    
+
+
 # Just return an output given a line
 def evaluate(line_tensor):
     hidden = rnn.initHidden()
@@ -152,30 +162,6 @@ def predict(line, n_predictions=3):
 
 
 
-def categoryFromOutput(output):
-    top_n, top_i = output.topk(1)
-    category_i = top_i[0].item()
-    return all_categories[category_i], category_i
-
-
-
-
-import random
-
-def randomChoice(l):
-    return l[random.randint(0, len(l) - 1)]
-
-def randomTrainingExample():
-    category = randomChoice(all_categories)
-    line = randomChoice(category_lines[category])
-    category_tensor = torch.tensor([all_categories.index(category)], dtype=torch.long)
-    line_tensor = lineToTensor(line)
-    return category, line, category_tensor, line_tensor
-
-for i in range(10):
-    category, line, category_tensor, line_tensor = randomTrainingExample()
-    print('category =', category, '/ line =', line)
-    
     
     
     
@@ -204,10 +190,6 @@ if __name__ == '__main__':
     predict(sys.argv[1])
 '''
 
-import time
-import math
-
-
 
 
 
@@ -219,8 +201,6 @@ def timeSince(since):
     return '%dm %ds' % (m, s)
 
         
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 
 
 
