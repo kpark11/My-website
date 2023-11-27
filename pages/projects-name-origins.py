@@ -26,7 +26,7 @@ import json
 def listNames(path): 
     names = []
     x = requests.get(path)
-    soup = BeautifulSoup(x.content, 'html5lib')
+    soup = BeautifulSoup(x.content, 'html.parser')
     print(soup.get_text())
     texts = json.loads(soup.get_text())
     
