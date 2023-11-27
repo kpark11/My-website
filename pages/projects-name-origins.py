@@ -22,6 +22,10 @@ import math
 import requests
 from bs4 import BeautifulSoup
 import json
+import pip
+
+pip.main(['install', '--upgrade', pip]).
+
 
 def listNames(path): 
     names = []
