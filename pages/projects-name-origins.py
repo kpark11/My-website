@@ -59,7 +59,7 @@ all_categories = []
 def readLines(filename):
     filename = path + filename
     x = requests.get(filename)
-    soup = BeautifulSoup(x.content, 'html5lib')
+    soup = BeautifulSoup(x.content, 'html.parser')
     texts = json.loads(soup.get_text())
     lines = texts['payload']['blob']['rawLines']
     return lines #[unicodeToAscii(texts) for line in texts]

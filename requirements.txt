@@ -9,3 +9,4 @@ dash_bootstrap_components==1.5.0
 torch==1.13.1
 bs4==0.0.1
 Beautifulsoup4==4.12.2
+json==2.0.9
