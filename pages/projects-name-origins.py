@@ -19,14 +19,24 @@ import matplotlib.ticker as ticker
 from dash import html,dcc,Input,Output,callback,State
 import time
 import math
+import requests
+from bs4 import BeautifulSoup
+import json
 
+def listNames(path): 
+    names = []
+    x = requests.get(path)
+    soup = BeautifulSoup(x.content, 'html5lib')
+    print(soup.get_text())
+    texts = json.loads(soup.get_text())
+    
+    for i in range(len(list(texts.items())[0][1]['tree']['items'])):
+        lists = list(texts.items())[0][1]['tree']['items'][i]['name']
+        names.append(lists)
+        
+    return names
 
-
-
-
-
-def findFiles(path): 
-    return glob.glob(path)
+path = 'https://github.com/kpark11/Our-website/tree/main/assets/data/data/names/'
 
 
 all_letters = string.ascii_letters + " .,;'"
@@ -47,11 +57,15 @@ all_categories = []
 
 # Read a file and split into lines
 def readLines(filename):
-    lines = open(filename, encoding='utf-8').read().strip().split('\n')
-    return [unicodeToAscii(line) for line in lines]
+    filename = path + filename
+    x = requests.get(filename)
+    soup = BeautifulSoup(x.content, 'html5lib')
+    texts = json.loads(soup.get_text())
+    lines = texts['payload']['blob']['rawLines']
+    return lines #[unicodeToAscii(texts) for line in texts]
 
-for filename in findFiles('/data/data/names/*.txt'):
-    category = os.path.splitext(os.path.basename(filename))[0]
+for filename in listNames(path):
+    category = filename
     all_categories.append(category)
     lines = readLines(filename)
     category_lines[category] = lines
