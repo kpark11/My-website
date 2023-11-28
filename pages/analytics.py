@@ -19,6 +19,10 @@ layout = html.Div([
                ],
                style={'textAlign':'center'}
                 ), #for page in dash.page_registry.values() if page["path"].startswith("/projects/")
+               html.P(dcc.Link('Origin of Names using recurrent Neural Network', href=dash.get_relative_path('/projects-name-origins'))),
+               ],
+               style={'textAlign':'center'}
+                ), #for page in dash.page_registry.values() if page["path"].startswith("/projects/")
            html.Br(),
            html.Br(),
            html.Div(
