@@ -270,7 +270,7 @@ layout = html.Div([
 
 
 @callback(
-    Output('container-button-basic', 'children'),
+    Output('output-file', 'children'),
     Input('train', 'n_clicks'),
     [State('n_hidden', 'val_hidden'),State('learning_rate','val_rate'),State('iterations','val_iter')],
     prevent_initial_call=True
