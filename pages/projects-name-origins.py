@@ -95,11 +95,6 @@ def lineToTensor(line):
 
 
 
-
-
-
-
-
 class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super(RNN, self).__init__()
@@ -279,7 +274,6 @@ layout = html.Div([
 @callback(
     Output('ls-loading', 'children'),
     [Input('train', component_property='value'),Input('n_hidden', component_property='value'),Input('learning_rate',component_property='value'),Input('iterations',component_property='value')],
-    prevent_initial_call=True
 )
 
 
