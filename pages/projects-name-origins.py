@@ -253,7 +253,7 @@ layout = html.Div([
             placeholder=100000)],
             style={'textAlign':'center'}),
     html.Br(),
-    html.Div(html.Button('Train', id='train', n_clicks=0)),
+    html.Div(html.Button('Train', id='train', n_clicks=0),style={'textAlign':'center'}),
     html.Div([html.Label("Type your name: "),
              dcc.Input(
              id='input',
