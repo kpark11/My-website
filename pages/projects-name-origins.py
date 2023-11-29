@@ -266,12 +266,13 @@ layout = html.Div([
             value=0,
             placeholder=0)],
             style={'textAlign':'center'}),
-     html.Div([
-        dcc.Loading(id="ls-loading1",
-                    children=[
-                        html.Div(id='output-file1',className='output1',style={'display':'flex'})
-                    ],
-                    type="circle"),]),
+    html.Div(html.Button('Predict', id='predict', n_clicks=0),style={'textAlign':'center'}),
+    html.Div([
+       dcc.Loading(id="ls-loading1",
+                   children=[
+                       html.Div(id='output-file1',className='output1',style={'display':'flex'})
+                   ],
+                   type="circle"),]),
 ])
 
 
@@ -330,7 +331,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
 
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
-    Input('input',component_property='value')
+    [Input('predict',component_property='value'),Input('input',component_property='value')]
 )
 
 def update_input_container(name):    
