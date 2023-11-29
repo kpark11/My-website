@@ -262,7 +262,7 @@ layout = html.Div([
     html.Br(),
     html.Div([html.Label("Type your name: "),
              dcc.Input(
-             id='input',
+             id='name',
             value=0,
             placeholder=0)],
             style={'textAlign':'center'}),
@@ -331,7 +331,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
 
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
-    [Input('predict','n_clicks'),Input('input',component_property='value1')]
+    [Input('predict',component_property='value'),Input('name',component_property='value')]
 )
 
 def update_input_container(predict,name):    
