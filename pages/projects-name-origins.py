@@ -277,7 +277,7 @@ layout = html.Div([
 )
 
 
-def update_output(val_hidden, val_rate,val_iter):
+def update_output(n_clicks,val_hidden, val_rate,val_iter):
     n_hidden = val_hidden
     learning_rate = val_rate
     n_iters = val_iter
