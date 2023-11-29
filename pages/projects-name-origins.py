@@ -232,7 +232,7 @@ layout = html.Div([
     html.Div('https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html',style={'textAlign':'center'}),
     html.Br(),
     html.Br(),
-    html.Div('There are few parameters needed to train: the numer of hidden layers (128 initial size) and learning rate (0.005 initial size)'),
+    html.Div('There are few parameters needed to train: the numer of hidden layers (128 initial size) and learning rate (0.005 initial size)',style={'textAlign':'center'}),
     html.Br(),
     html.Div([html.Label("the number of hidden layers :   "),
              dcc.Input(
@@ -254,6 +254,7 @@ layout = html.Div([
             style={'textAlign':'center'}),
     html.Br(),
     html.Div(html.Button('Train', id='train', n_clicks=0),style={'textAlign':'center'}),
+    html.Div(id='output-file',className='output', style={'display':'flex'}),
     html.Div([html.Label("Type your name: "),
              dcc.Input(
              id='input',
@@ -263,7 +264,7 @@ layout = html.Div([
      html.Div([
         dcc.Loading(id="ls-loading",
                     children=[
-                        html.Div(id='output-file',className='file',style={'display':'flex'})
+                        html.Div(id='output-file1',className='output1',style={'display':'flex'})
                     ],
                     type="circle"),]),
 ])
