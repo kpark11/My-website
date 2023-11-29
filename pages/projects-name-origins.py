@@ -267,7 +267,7 @@ layout = html.Div([
             placeholder=0)],
             style={'textAlign':'center'}),
      html.Div([
-        dcc.Loading(id="ls-loading",
+        dcc.Loading(id="ls-loading1",
                     children=[
                         html.Div(id='output-file1',className='output1',style={'display':'flex'})
                     ],
@@ -276,7 +276,7 @@ layout = html.Div([
 
 
 @callback(
-    Output('output-file', 'children'),
+    Output('ls-loading', 'children'),
     [Input('train', 'n_clicks'),Input('n_hidden', 'val_hidden'),Input('learning_rate','val_rate'),Input('iterations','val_iter')],
     prevent_initial_call=True
 )
@@ -329,7 +329,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
 
 
 @callback(
-    Output(component_id='ls-loading',component_property='children'),
+    Output(component_id='ls-loading1',component_property='children'),
     Input('input',component_property='value')
 )
 
