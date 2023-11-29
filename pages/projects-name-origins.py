@@ -278,7 +278,7 @@ layout = html.Div([
 
 @callback(
     Output('ls-loading', 'children'),
-    [Input('train', 'n_clicks'),Input('n_hidden', 'val_hidden'),Input('learning_rate','val_rate'),Input('iterations','val_iter')],
+    [Input('train', component_property='value'),Input('n_hidden', component_property='value'),Input('learning_rate',component_property='value'),Input('iterations',component_property='value')],
     prevent_initial_call=True
 )
 
@@ -331,10 +331,10 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
 
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
-    [Input('predict',component_property='value'),Input('input',component_property='value')]
+    [Input('predict','n_clicks'),Input('input',component_property='value1')]
 )
 
-def update_input_container(name):    
+def update_input_container(predict,name):    
     origin = predict(name)
     return origin
 
