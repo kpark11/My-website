@@ -272,8 +272,7 @@ layout = html.Div([
 
 @callback(
     Output('output-file', 'children'),
-    Input('train', 'n_clicks'),
-    [State('n_hidden', 'val_hidden'),State('learning_rate','val_rate'),State('iterations','val_iter')],
+    [Input('train', 'n_clicks'),Input('n_hidden', 'val_hidden'),Input('learning_rate','val_rate'),Input('iterations','val_iter')],
     prevent_initial_call=True
 )
 
