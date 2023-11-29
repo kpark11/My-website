@@ -263,8 +263,8 @@ layout = html.Div([
     html.Div([html.Label("Type your name: "),
              dcc.Input(
              id='name',
-            value=0,
-            placeholder=0)],
+            value='Carpenter',
+            placeholder='Carpenter')],
             style={'textAlign':'center'}),
     html.Div(html.Button('Predict', id='predict', n_clicks=0),style={'textAlign':'center'}),
     html.Div([
