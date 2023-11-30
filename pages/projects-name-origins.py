@@ -319,7 +319,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
 
             
         
-    return None
+    return print('done')
 
 
 
