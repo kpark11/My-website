@@ -324,10 +324,10 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
 
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
-    [Input('predict',component_property='value'),Input('name',component_property='value')]
+    [Input('predict_button',component_property='value'),Input('name',component_property='value')]
 )
 
-def update_input_container(predict,name):    
+def update_input_container(predict_button,name):    
     origin = predict(name)
     return origin
 
