@@ -250,7 +250,7 @@ layout = html.Div([
     html.Div([
         dcc.Loading(id="ls-loading",
                     children=[
-                        html.Div(id='output-file',children='Click Train Button')
+                        html.Div(id='output-file',children='Click Train Button',style={'textAlign':'center'})
                     ],
                     type="circle"),]),
     html.Br(),
@@ -263,7 +263,7 @@ layout = html.Div([
     html.Div([
        dcc.Loading(id="ls-loading1",
                    children=[
-                       html.Div(id='output-file1',children='Origin')
+                       html.Div(id='output-file1',children='Origin',style={'textAlign':'center'})
                    ],
                    type="circle"),]),
 ])
@@ -306,7 +306,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
         if iter % print_every == 0:
             guess, guess_i = categoryFromOutput(output)
             correct = '✓' if guess == category else '✗ (%s)' % category
-            return print('%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / n_iters * 100, timeSince(start), loss, line, guess, correct))
+            return '%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / n_iters * 100, timeSince(start), loss, line, guess, correct)
     
         # Add current loss avg to list of losses
         if iter % plot_every == 0:
