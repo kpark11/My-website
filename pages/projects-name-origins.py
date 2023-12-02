@@ -250,21 +250,20 @@ layout = html.Div([
     html.Div([
         dcc.Loading(id="ls-loading",
                     children=[
-                        html.Div(id='output-file',className='output',style={'display':'flex'})
+                        html.Div(id='output-file',children='Click Train Button')
                     ],
                     type="circle"),]),
     html.Br(),
     html.Div([html.Label("Type your name: "),
              dcc.Input(
              id='name',
-            value='Carpenter',
-            placeholder='Carpenter')],
+            type='text')],
             style={'textAlign':'center'}),
     html.Div(html.Button('Predict', id='predict', n_clicks=0),style={'textAlign':'center'}),
     html.Div([
        dcc.Loading(id="ls-loading1",
                    children=[
-                       html.Div(id='output-file1',className='output1',style={'display':'flex'})
+                       html.Div(id='output-file1',children='Origin')
                    ],
                    type="circle"),]),
 ])
@@ -272,7 +271,9 @@ layout = html.Div([
 
 @callback(
     Output('ls-loading', 'children'),
-    [Input('train', component_property='value'),Input('n_hidden', component_property='value'),Input('learning_rate',component_property='value'),Input('iterations',component_property='value')],
+    Input('train', component_property='value'),
+    [State('n_hidden', component_property='value'),State('learning_rate',component_property='value'),State('iterations',component_property='value')],
+    prevent_initial_call=True
 )
 
 
@@ -324,7 +325,9 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
 
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
-    [Input('predict_button',component_property='value'),Input('name',component_property='value')]
+    Input('predict_button',component_property='value'),
+    State('name',component_property='value'),
+    prevent_initial_call=True
 )
 
 def update_input_container(predict_button,name):    
