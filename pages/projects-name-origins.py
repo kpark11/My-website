@@ -257,6 +257,7 @@ layout = html.Div([
     html.Div([html.Label("Type your name: "),
              dcc.Input(
              id='name',
+             #children='Park',
             type='text')],
             style={'textAlign':'center'}),
     html.Div(html.Button('Predict', id='predict', n_clicks=0),style={'textAlign':'center'}),
@@ -270,9 +271,11 @@ layout = html.Div([
 
 
 @callback(
-    Output('ls-loading', 'children'),
-    Input('train', component_property='value'),
-    [State('n_hidden', component_property='value'),State('learning_rate',component_property='value'),State('iterations',component_property='value')],
+    Output(component_id='ls-loading', component_property='children'),
+    Input(component_id='train', component_property='n_clicks'),
+    [State(component_id='n_hidden', component_property='val_hidden'),
+     State(component_id='learning_rate',component_property='val_rate'),
+     State(component_id='iterations',component_property='val_iter')],
     prevent_initial_call=True
 )
 
