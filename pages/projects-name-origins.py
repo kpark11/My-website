@@ -95,35 +95,6 @@ def lineToTensor(line):
 
 
 
-class RNN(nn.Module):
-    def __init__(self, input_size, hidden_size, output_size):
-        super(RNN, self).__init__()
-
-        self.hidden_size = hidden_size
-
-        self.i2h = nn.Linear(input_size + hidden_size, hidden_size)
-        self.h2o = nn.Linear(hidden_size, output_size)
-        self.softmax = nn.LogSoftmax(dim=1)
-
-    def forward(self, input, hidden):
-        combined = torch.cat((input, hidden), 1)
-        hidden = self.i2h(combined)
-        output = self.h2o(hidden)
-        output = self.softmax(output)
-        return output, hidden
-
-    def initHidden(self):
-        return torch.zeros(1, self.hidden_size)
-    
-    
-    
-n_hidden = 128
-rnn = RNN(n_letters, n_hidden, n_categories)
-
-
-
-
-
 def categoryFromOutput(output):
     top_n, top_i = output.topk(1)
     category_i = top_i[0].item()
@@ -145,7 +116,50 @@ for i in range(10):
     category, line, category_tensor, line_tensor = randomTrainingExample()
     print('category =', category, '/ line =', line)
     
+    
+    
 
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(RNN, self).__init__()
+
+        self.hidden_size = hidden_size
+
+        self.i2h = nn.Linear(input_size + hidden_size, hidden_size)
+        self.h2o = nn.Linear(hidden_size, output_size)
+        self.softmax = nn.LogSoftmax(dim=1)
+
+    def forward(self, input, hidden):
+        combined = torch.cat((input, hidden), 1)
+        hidden = self.i2h(combined)
+        output = self.h2o(hidden)
+        output = self.softmax(output)
+        return output, hidden
+
+    def initHidden(self):
+        return torch.zeros(1, self.hidden_size)
+    
+criterion = nn.NLLLoss()
+    
+n_hidden = 128
+rnn = RNN(n_letters, n_hidden, n_categories)
+    
+def train(category_tensor, line_tensor,learning_rate):
+    hidden = rnn.initHidden()
+
+    rnn.zero_grad()
+
+    for i in range(line_tensor.size()[0]):
+        output, hidden = rnn(line_tensor[i], hidden)
+
+    loss = criterion(output, category_tensor)
+    loss.backward()
+
+    # Add parameters' gradients to their values, multiplied by learning rate
+    for p in rnn.parameters():
+        p.data.add_(p.grad.data, alpha=-learning_rate)
+
+    return output, loss.item()
 
 # Just return an output given a line
 def evaluate(line_tensor):
@@ -174,25 +188,8 @@ def predict(line, n_predictions=3):
 
 
 
-criterion = nn.NLLLoss()
 
 
-def train(category_tensor, line_tensor,learning_rate):
-    hidden = rnn.initHidden()
-
-    rnn.zero_grad()
-
-    for i in range(line_tensor.size()[0]):
-        output, hidden = rnn(line_tensor[i], hidden)
-
-    loss = criterion(output, category_tensor)
-    loss.backward()
-
-    # Add parameters' gradients to their values, multiplied by learning rate
-    for p in rnn.parameters():
-        p.data.add_(p.grad.data, alpha=-learning_rate)
-
-    return output, loss.item()
 '''
 if __name__ == '__main__':
     predict(sys.argv[1])
@@ -225,12 +222,6 @@ layout = html.Div([
     html.Br(),
     html.Div('There are few parameters needed to train: the numer of hidden layers (128 initial size) and learning rate (0.005 initial size)',style={'textAlign':'center'}),
     html.Br(),
-    html.Div([html.Label("the number of hidden layers :   "),
-             dcc.Input(
-             id='n_hidden',
-            value=128,
-            placeholder=128)],
-            style={'textAlign':'center'}),
     html.Div([html.Label("learning rate :   "),
              dcc.Input(
              id='learning_rate',
@@ -243,6 +234,7 @@ layout = html.Div([
             value=100000,
             placeholder=100000)],
             style={'textAlign':'center'}),
+     html.Div(id='Display',children='Values',style={'textAlgin':'center'}),
     html.Div(html.Button('Train', id='train', n_clicks=0),style={'textAlign':'center'}),
     html.Div([
         dcc.Loading(id="ls-loading",
@@ -268,25 +260,26 @@ layout = html.Div([
 ])
 
 
+
+
+
 @callback(
     Output(component_id='ls-loading', component_property='children'),
     Input(component_id='train', component_property='n_clicks'),
-    [State(component_id='n_hidden', component_property='val_hidden'),
-     State(component_id='learning_rate',component_property='val_rate'),
+    [State(component_id='learning_rate',component_property='val_rate'),
      State(component_id='iterations',component_property='val_iter')],
     prevent_initial_call=True
 )
 
 
-def update_output(n_clicks,val_hidden, val_rate,val_iter):
-    n_hidden = val_hidden
+def update_output(n_clicks, val_rate,val_iter):
     learning_rate = val_rate
     n_iters = val_iter
     # Keep track of losses for plotting
     current_loss = 0
     all_losses = []
 
-    rnn = RNN(n_letters, n_hidden, n_categories)
+    
     
     start = time.time()
     
@@ -321,7 +314,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
             title='Losses',)),
 
     #torch.save(rnn, 'char-rnn-classification.pht')
-    return ['n_hidden: {}\nlearning rate: {}\niterations: {}\nresults: {}'.format(n_hidden,learning_rate,n_iters,tracking),
+    return ['results: {}'.format(tracking),
             html.Div(className='chart-item', children=html.Div(Y_chart),
              style={'display': 'flex'})]
 
