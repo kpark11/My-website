@@ -317,9 +317,8 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
     plt.figure()
     plt.plot(all_losses)
 
-            
-        
-    return print('done')
+    torch.save(rnn, 'char-rnn-classification.pht')
+
 
 
 
@@ -331,6 +330,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
 )
 
 def update_input_container(predict_button,name):    
+    rnn.load_state_dict(torch.load('char-rnn-classification.pht'))
     origin = predict(name)
     return origin
 
