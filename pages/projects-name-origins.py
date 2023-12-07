@@ -17,6 +17,7 @@ import random
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from dash import html,dcc,Input,Output,callback,State
+import plotly.express as px
 import time
 import math
 import requests
@@ -250,7 +251,8 @@ layout = html.Div([
     html.Div([
         dcc.Loading(id="ls-loading",
                     children=[
-                        html.Div(id='output-file',children='Click Train Button',style={'textAlign':'center'})
+                        html.Div(id='output-file',children='Click Train Button',style={'textAlign':'center'}),
+                        html.Div(id='output-container1', className='chart-grid', style={'display':'flex'}),
                     ],
                     type="circle"),]),
     html.Br(),
@@ -287,9 +289,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
     # Keep track of losses for plotting
     current_loss = 0
     all_losses = []
-    print('n_hidden: {}'.format(n_hidden))
-    print('learning rate: {}'.format(learning_rate))
-    print('iterations: {}'.format(n_iters))
+
     rnn = RNN(n_letters, n_hidden, n_categories)
     
     start = time.time()
@@ -298,6 +298,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
     print_every = 5000
     plot_every = 1000
     
+    tracking = []
     
     
     for iter in range(1, n_iters + 1):
@@ -309,31 +310,36 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
         if iter % print_every == 0:
             guess, guess_i = categoryFromOutput(output)
             correct = '✓' if guess == category else '✗ (%s)' % category
-            return '%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / n_iters * 100, timeSince(start), loss, line, guess, correct)
+            tracking.append('%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / n_iters * 100, timeSince(start), loss, line, guess, correct))
     
         # Add current loss avg to list of losses
         if iter % plot_every == 0:
             all_losses.append(current_loss / plot_every)
             current_loss = 0
             
-     
+    
     plt.figure()
-    plt.plot(all_losses)
+    Y_chart = dcc.Graph(figure=px.line(all_losses,
+            values='Losses',
+            names='Losses',
+            title='Losses',)),
 
-    torch.save(rnn, 'char-rnn-classification.pht')
-
+    #torch.save(rnn, 'char-rnn-classification.pht')
+    return ['n_hidden: {}\nlearning rate: {}\niterations: {}\n'.format(n_hidden,learning_rate,n_iters),
+            html.Div(className='chart-item', children=html.Div(Y_chart),
+             style={'display': 'flex'})]
 
 
 
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
     Input('predict_button',component_property='value'),
-    State('name',component_property='value'),
+    State('name',component_property='name'),
     prevent_initial_call=True
 )
 
-def update_input_container(predict_button,name):    
-    rnn.load_state_dict(torch.load('char-rnn-classification.pht'))
+def update_input_container(value,name):    
+    #rnn.load_state_dict(torch.load('char-rnn-classification.pht'))
     origin = predict(name)
     return origin
 
