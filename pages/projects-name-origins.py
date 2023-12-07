@@ -174,14 +174,10 @@ def predict(line, n_predictions=3):
 
 
 
-    
-    
-    
-learning_rate = 0.005 # If you set this too high, it might explode. If too low, it might not learn
 criterion = nn.NLLLoss()
 
 
-def train(category_tensor, line_tensor):
+def train(category_tensor, line_tensor,learning_rate):
     hidden = rnn.initHidden()
 
     rnn.zero_grad()
@@ -303,7 +299,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
     
     for iter in range(1, n_iters + 1):
         category, line, category_tensor, line_tensor = randomTrainingExample()
-        output, loss = train(category_tensor, line_tensor)
+        output, loss = train(category_tensor, line_tensor,learning_rate)
         current_loss += loss
     
         # Print ``iter`` number, loss, name and guess
