@@ -325,7 +325,7 @@ def update_output(n_clicks,val_hidden, val_rate,val_iter):
             title='Losses',)),
 
     #torch.save(rnn, 'char-rnn-classification.pht')
-    return ['n_hidden: {}\nlearning rate: {}\niterations: {}\n'.format(n_hidden,learning_rate,n_iters),
+    return ['n_hidden: {}\nlearning rate: {}\niterations: {}\nresults: {}'.format(n_hidden,learning_rate,n_iters,tracking),
             html.Div(className='chart-item', children=html.Div(Y_chart),
              style={'display': 'flex'})]
 
