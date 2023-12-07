@@ -220,7 +220,7 @@ layout = html.Div([
     html.Div('https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html',style={'textAlign':'center'}),
     html.Br(),
     html.Br(),
-    html.Div('There are few parameters needed to train: the numer of hidden layers (128 initial size) and learning rate (0.005 initial size)',style={'textAlign':'center'}),
+    html.Div('There are few parameters needed to train: the learning rate (0.005 initial size) and iterations (100000)',style={'textAlign':'center'}),
     html.Br(),
     html.Div([html.Label("learning rate :   "),
              dcc.Input(
@@ -234,7 +234,6 @@ layout = html.Div([
             value=100000,
             placeholder=100000)],
             style={'textAlign':'center'}),
-     html.Div(id='Display',children='Values',style={'textAlgin':'center'}),
     html.Div(html.Button('Train', id='train', n_clicks=0),style={'textAlign':'center'}),
     html.Div([
         dcc.Loading(id="ls-loading",
@@ -265,16 +264,16 @@ layout = html.Div([
 
 @callback(
     Output(component_id='ls-loading', component_property='children'),
-    Input(component_id='train', component_property='n_clicks'),
-    [State(component_id='learning_rate',component_property='val_rate'),
-     State(component_id='iterations',component_property='val_iter')],
+    Input('train', component_property='value'),
+    [State(component_id='learning_rate',component_property='value'),
+     State(component_id='iterations',component_property='value')],
     prevent_initial_call=True
 )
 
 
-def update_output(n_clicks, val_rate,val_iter):
-    learning_rate = val_rate
-    n_iters = val_iter
+def update_output(n_clicks, learning_rate,iterations):
+    learning_rate = int(learning_rate)
+    iterations = int(iterations)
     # Keep track of losses for plotting
     current_loss = 0
     all_losses = []
@@ -290,7 +289,7 @@ def update_output(n_clicks, val_rate,val_iter):
     tracking = []
     
     
-    for iter in range(1, n_iters + 1):
+    for iter in range(1, iterations + 1):
         category, line, category_tensor, line_tensor = randomTrainingExample()
         output, loss = train(category_tensor, line_tensor,learning_rate)
         current_loss += loss
@@ -299,7 +298,7 @@ def update_output(n_clicks, val_rate,val_iter):
         if iter % print_every == 0:
             guess, guess_i = categoryFromOutput(output)
             correct = '✓' if guess == category else '✗ (%s)' % category
-            tracking.append('%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / n_iters * 100, timeSince(start), loss, line, guess, correct))
+            tracking.append('%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / iterations * 100, timeSince(start), loss, line, guess, correct))
     
         # Add current loss avg to list of losses
         if iter % plot_every == 0:
@@ -313,7 +312,7 @@ def update_output(n_clicks, val_rate,val_iter):
             names='Losses',
             title='Losses',)),
 
-    #torch.save(rnn, 'char-rnn-classification.pht')
+    torch.save(rnn, 'char-rnn-classification.pht')
     return ['results: {}'.format(tracking),
             html.Div(className='chart-item', children=html.Div(Y_chart),
              style={'display': 'flex'})]
@@ -323,12 +322,12 @@ def update_output(n_clicks, val_rate,val_iter):
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
     Input('predict_button',component_property='value'),
-    State('name',component_property='name'),
+    State('name',component_property='value'),
     prevent_initial_call=True
 )
 
 def update_input_container(value,name):    
-    #rnn.load_state_dict(torch.load('char-rnn-classification.pht'))
+    rnn.load_state_dict(torch.load('char-rnn-classification.pht'))
     origin = predict(name)
     return origin
 
