@@ -40,6 +40,7 @@ def listNames(path):
     return names
 
 path = 'https://github.com/kpark11/Our-website/tree/main/assets/data/data/names/'
+model_path = 'https://github.com/kpark11/Our-website/tree/main/assets/char-rnn-classification.pht'
 
 
 all_letters = string.ascii_letters + " .,;'"
