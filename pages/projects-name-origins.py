@@ -13,16 +13,7 @@ import os
 import glob
 import unicodedata
 import string
-import random
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 from dash import html,dcc,Input,Output,callback,State
-import plotly.express as px
-import math
-import requests
-from bs4 import BeautifulSoup
-import json
-
 
 
 print(os.listdir('assets'))
@@ -156,12 +147,15 @@ layout = html.Div([
              id='name',
              #children='Park',
             type='text')],
-            style={'textAlign':'center'}),
+            style={'textAlign':'center',"margin-left": "15px"}),
     html.Div(html.Button('Predict', id='predict', n_clicks=0),style={'textAlign':'center'}),
+    html.Br(),
     html.Div([
        dcc.Loading(id="ls-loading1",
                    children=[
-                       html.Div(id='output-file1',children='Origin',style={'textAlign':'center'})
+                       html.Div(id='output-file1',
+                                className='HKL',
+                                style={'textAlign':'center','display':'flex'})
                    ],
                    type="circle"),]),
 ])
