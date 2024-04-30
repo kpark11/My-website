@@ -154,7 +154,7 @@ layout = html.Div([
        dcc.Loading(id="ls-loading1",
                    children=[
                        html.Div(id='output-file1',
-                                className='HKL',
+                                children='Enter a value and press submit',
                                 style={'textAlign':'center','display':'flex'})
                    ],
                    type="circle"),]),
@@ -165,12 +165,11 @@ layout = html.Div([
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
     Input('predict_button',component_property='value'),
-    State('name',component_property='value'),
+    State('output-file1',component_property='value'),
     prevent_initial_call=True
 )
 
-def update_input_container(value,name):    
-    origin = predict(name)
-    return origin
+def update_input_container(value,name):
+    return predict(name)
 
 
