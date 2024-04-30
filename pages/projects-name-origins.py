@@ -10,7 +10,6 @@ import torch
 import dash
 import torch.nn as nn
 import os
-os.sys('pip install --upgrade pip')
 import glob
 import unicodedata
 import string
