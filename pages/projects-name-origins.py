@@ -115,17 +115,18 @@ def evaluate(line_tensor):
 
 
 def predict(line, n_predictions=3):
-    output = evaluate(lineToTensor(line))
-
-    # Get top N categories
-    topv, topi = output.data.topk(n_predictions, 1, True)
-    predictions = []
-
-    for i in range(n_predictions):
-        value = topv[0][i]
-        category_index = topi[0][i]
-        print('(%.2f) %s' % (value, all_categories[category_index]))
-        predictions.append([value, all_categories[category_index]])
+    with torch.no_grad():
+        output = evaluate(lineToTensor(line))
+    
+        # Get top N categories
+        topv, topi = output.topk(n_predictions, 1, True)
+        predictions = []
+    
+        for i in range(n_predictions):
+            value = topv[0][i].item()
+            category_index = topi[0][i].item()
+            print('(%.2f) %s' % (value, all_categories[category_index]))
+            predictions.append([value, all_categories[category_index]])
 
     return predictions
 
@@ -154,8 +155,8 @@ layout = html.Div([
        dcc.Loading(id="ls-loading1",
                    children=[
                        html.Div(id='output-file1',
-                                children='Enter a value and press submit',
-                                style={'textAlign':'center','display':'flex'})
+                                children='Enter a name and press Predict',
+                                style={'textAlign':'center'})
                    ],
                    type="circle"),]),
 ])
