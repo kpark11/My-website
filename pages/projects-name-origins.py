@@ -18,7 +18,6 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from dash import html,dcc,Input,Output,callback,State
 import plotly.express as px
-import time
 import math
 import requests
 from bs4 import BeautifulSoup
@@ -40,7 +39,7 @@ def listNames(path):
     return names
 
 path = 'https://github.com/kpark11/Our-website/tree/main/assets/data/data/names/'
-model_path = 'https://github.com/kpark11/Our-website/blob/main/assets/char-rnn-classification.pht'
+model_path = 'assets/char-rnn-classification.pht'
 
 
 all_letters = string.ascii_letters + " .,;'"
