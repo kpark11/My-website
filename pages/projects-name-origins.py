@@ -27,27 +27,15 @@ import json
 
 print(os.listdir('assets'))
 
-def listNames(path): 
-    names = []
-    x = requests.get(path)
-    soup = BeautifulSoup(x.content, 'html.parser')
-    print(soup.get_text())
-    texts = json.loads(soup.get_text())
-    
-    for i in range(len(list(texts.items())[0][1]['tree']['items'])):
-        lists = list(texts.items())[0][1]['tree']['items'][i]['name']
-        names.append(lists)
-        
-    return names
 
-path = 'https://github.com/kpark11/Our-website/tree/main/assets/data/data/names/'
+name_path = 'assets/data/data/names/*.txt'
 model_path = 'assets/char-rnn-classification.pht'
 
 
 all_letters = string.ascii_letters + " .,;'"
 n_letters = len(all_letters)
 
-
+def findFiles(name_path): return glob.glob(name_path)
 # Turn a Unicode string to plain ASCII, thanks to https://stackoverflow.com/a/518232/2809427
 def unicodeToAscii(s):
     return ''.join(
@@ -62,14 +50,10 @@ all_categories = []
 
 # Read a file and split into lines
 def readLines(filename):
-    filename = path + filename
-    x = requests.get(filename)
-    soup = BeautifulSoup(x.content, 'html.parser')
-    texts = json.loads(soup.get_text())
-    lines = texts['payload']['blob']['rawLines']
-    return lines #[unicodeToAscii(texts) for line in texts]
+    lines = open(filename, encoding='utf-8').read().strip().split('\n')
+    return [unicodeToAscii(line) for line in lines]
 
-for filename in listNames(path):
+for filename in findFiles(name_path):
     category = filename
     all_categories.append(category)
     lines = readLines(filename)
