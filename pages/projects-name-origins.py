@@ -144,7 +144,10 @@ criterion = nn.NLLLoss()
     
 n_hidden = 128
 rnn = RNN(n_letters, n_hidden, n_categories)
-    
+
+rnn.load_state_dict(torch.load(model_path))
+rnn.eval()
+                    
 def train(category_tensor, line_tensor,learning_rate):
     hidden = rnn.initHidden()
 
@@ -190,27 +193,6 @@ def predict(line, n_predictions=3):
 
 
 
-
-'''
-if __name__ == '__main__':
-    predict(sys.argv[1])
-'''
-
-
-
-
-def timeSince(since):
-    now = time.time()
-    s = now - since
-    m = math.floor(s / 60)
-    s -= m * 60
-    return '%dm %ds' % (m, s)
-
-        
-
-
-
-
 dash.register_page(__name__)
 
 
@@ -220,29 +202,6 @@ layout = html.Div([
     html.Div('This is based on Sean Robert',style={'textAlign':'center'}),
     html.Div('https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html',style={'textAlign':'center'}),
     html.Br(),
-    html.Br(),
-    html.Div('There are few parameters needed to train: the learning rate (0.005 initial size) and iterations (100000)',style={'textAlign':'center'}),
-    html.Br(),
-    html.Div([html.Label("learning rate :   "),
-             dcc.Input(
-             id='learning_rate',
-            value=0.005,
-            placeholder=0.005)],
-            style={'textAlign':'center'}),
-     html.Div([html.Label("iterations :   "),
-             dcc.Input(
-             id='iterations',
-            value=100000,
-            placeholder=100000)],
-            style={'textAlign':'center'}),
-    html.Div(html.Button('Train', id='train', n_clicks=0),style={'textAlign':'center'}),
-    html.Div([
-        dcc.Loading(id="ls-loading",
-                    children=[
-                        html.Div(id='output-file',children='Click Train Button',style={'textAlign':'center'}),
-                        html.Div(id='output-container1', className='chart-grid', style={'display':'flex'}),
-                    ],
-                    type="circle"),]),
     html.Br(),
     html.Div([html.Label("Type your name: "),
              dcc.Input(
@@ -261,65 +220,6 @@ layout = html.Div([
 
 
 
-
-
-@callback(
-    Output(component_id='ls-loading', component_property='children'),
-    Input('train', component_property='value'),
-    [State(component_id='learning_rate',component_property='value'),
-     State(component_id='iterations',component_property='value')],
-    prevent_initial_call=True
-)
-
-
-def update_output(n_clicks, learning_rate,iterations):
-    learning_rate = int(learning_rate)
-    iterations = int(iterations)
-    # Keep track of losses for plotting
-    current_loss = 0
-    all_losses = []
-
-    
-    
-    start = time.time()
-    
-    
-    print_every = 5000
-    plot_every = 1000
-    
-    tracking = []
-    
-    
-    for iter in range(1, iterations + 1):
-        category, line, category_tensor, line_tensor = randomTrainingExample()
-        output, loss = train(category_tensor, line_tensor,learning_rate)
-        current_loss += loss
-    
-        # Print ``iter`` number, loss, name and guess
-        if iter % print_every == 0:
-            guess, guess_i = categoryFromOutput(output)
-            correct = '✓' if guess == category else '✗ (%s)' % category
-            tracking.append('%d %d%% (%s) %.4f %s / %s %s' % (iter, iter / iterations * 100, timeSince(start), loss, line, guess, correct))
-    
-        # Add current loss avg to list of losses
-        if iter % plot_every == 0:
-            all_losses.append(current_loss / plot_every)
-            current_loss = 0
-            
-    
-    plt.figure()
-    Y_chart = dcc.Graph(figure=px.line(all_losses,
-            values='Losses',
-            names='Losses',
-            title='Losses',)),
-
-    torch.save(rnn, 'char-rnn-classification.pht')
-    return ['results: {}'.format(tracking),
-            html.Div(className='chart-item', children=html.Div(Y_chart),
-             style={'display': 'flex'})]
-
-
-
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
     Input('predict_button',component_property='value'),
@@ -328,7 +228,6 @@ def update_output(n_clicks, learning_rate,iterations):
 )
 
 def update_input_container(value,name):    
-    rnn.load_state_dict(torch.load('char-rnn-classification.pht'))
     origin = predict(name)
     return origin
 
