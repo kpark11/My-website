@@ -23,7 +23,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-print(os.listdir())
+print(os.listdir('assets'))
 
 def listNames(path): 
     names = []
