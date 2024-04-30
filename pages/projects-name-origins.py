@@ -10,6 +10,7 @@ import torch
 import dash
 import torch.nn as nn
 import os
+os.sys('pip install --upgrade pip')
 import glob
 import unicodedata
 import string
@@ -22,6 +23,8 @@ import math
 import requests
 from bs4 import BeautifulSoup
 import json
+
+
 
 print(os.listdir('assets'))
 
