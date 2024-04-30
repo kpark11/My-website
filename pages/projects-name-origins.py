@@ -24,7 +24,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-
+print(os.listdir())
 
 def listNames(path): 
     names = []
@@ -40,7 +40,7 @@ def listNames(path):
     return names
 
 path = 'https://github.com/kpark11/Our-website/tree/main/assets/data/data/names/'
-model_path = 'https://github.com/kpark11/Our-website/tree/main/assets/char-rnn-classification.pht'
+model_path = 'https://github.com/kpark11/Our-website/blob/main/assets/char-rnn-classification.pht'
 
 
 all_letters = string.ascii_letters + " .,;'"
@@ -96,28 +96,6 @@ def lineToTensor(line):
 
 
 
-def categoryFromOutput(output):
-    top_n, top_i = output.topk(1)
-    category_i = top_i[0].item()
-    return all_categories[category_i], category_i
-
-
-def randomChoice(l):
-    return l[random.randint(0, len(l) - 1)]
-
-def randomTrainingExample():
-    category = randomChoice(all_categories)
-    line = randomChoice(category_lines[category])
-    category_tensor = torch.tensor([all_categories.index(category)], dtype=torch.long)
-    line_tensor = lineToTensor(line)
-    return category, line, category_tensor, line_tensor
-
-
-for i in range(10):
-    category, line, category_tensor, line_tensor = randomTrainingExample()
-    print('category =', category, '/ line =', line)
-    
-    
     
 
 class RNN(nn.Module):
@@ -140,6 +118,7 @@ class RNN(nn.Module):
     def initHidden(self):
         return torch.zeros(1, self.hidden_size)
     
+    
 criterion = nn.NLLLoss()
     
 n_hidden = 128
@@ -147,23 +126,7 @@ rnn = RNN(n_letters, n_hidden, n_categories)
 
 rnn.load_state_dict(torch.load(model_path))
 rnn.eval()
-                    
-def train(category_tensor, line_tensor,learning_rate):
-    hidden = rnn.initHidden()
 
-    rnn.zero_grad()
-
-    for i in range(line_tensor.size()[0]):
-        output, hidden = rnn(line_tensor[i], hidden)
-
-    loss = criterion(output, category_tensor)
-    loss.backward()
-
-    # Add parameters' gradients to their values, multiplied by learning rate
-    for p in rnn.parameters():
-        p.data.add_(p.grad.data, alpha=-learning_rate)
-
-    return output, loss.item()
 
 # Just return an output given a line
 def evaluate(line_tensor):
