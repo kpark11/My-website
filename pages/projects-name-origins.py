@@ -171,6 +171,8 @@ layout = html.Div([
 )
 
 def update_input_container(n_clicks,value):
-    return predict(value) + ' it was clicked {}'.format(n_clicks)
+    pred = predict(value)
+    
+    return type(pred)
 
 
