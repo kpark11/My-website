@@ -165,12 +165,12 @@ layout = html.Div([
 
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
-    Input('predict_button',component_property='value'),
+    Input('predict_button','n_clicks'),
     State('output-file1',component_property='value'),
     prevent_initial_call=True
 )
 
-def update_input_container(value,name):
-    return predict(name)
+def update_input_container(n_clicks,value):
+    return predict(value) + ' it was clicked {}'.format(n_clicks)
 
 
