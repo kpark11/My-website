@@ -173,7 +173,7 @@ def update_input_container(n_clicks,value):
     score,pred = predict(value)
     out = ''
     for i in range(len(pred)):
-        out = out + str(score[i]) + ', ' + str(pred[i]) + '\n'
+        out = out + str(score[i]) + ', ' + str(pred[i]).split('/')[-1].split('.')[0] + '\n'
     print(out)
     print(type(out))
     return out
