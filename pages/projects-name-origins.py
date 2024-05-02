@@ -102,7 +102,7 @@ rnn = RNN(n_letters, n_hidden, n_categories)
 
 rnn.load_state_dict(torch.load(model_path))
 rnn.eval()
-
+print(rnn)
 
 # Just return an output given a line
 def evaluate(line_tensor):
