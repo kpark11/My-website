@@ -154,8 +154,8 @@ layout = html.Div([
     html.Div([
        dcc.Loading(id="ls-loading1",
                    children='Type your first or last name and press Enter',
-                   style={'textAlign':'center'},
-                   type="circle"),]),
+                   type="circle"),],
+       style={'textAlign':'center'}),
 ])
 
 
@@ -170,6 +170,6 @@ layout = html.Div([
 def update_input_container(n_clicks,value):
     pred = predict(value)
     
-    return type(pred)
+    return print(pred,n_clicks)
 
 
