@@ -17,7 +17,7 @@ layout = html.Div([
            style={'textAlign':'center'}),
     html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
         style={'width': 550, #'98%''
-                'height': 500, #'60px'
+                'height': 600, #'60px'
                 'borderRadius': "5px",
                 'textAlign': "center",
                 'margin': "0 auto",

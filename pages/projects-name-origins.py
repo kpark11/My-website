@@ -156,14 +156,24 @@ layout = html.Div([
     html.Div([
        dcc.Loading(id="ls-loading1",
                    children='Type your first or last name and press Enter',
+                   type="circle"),
+       html.Br(),
+       dcc.Loading(id="ls-loading2",
+                   children='',
+                   type="circle"),
+       html.Br(),
+       dcc.Loading(id="ls-loading3",
+                   children='',
                    type="circle"),],
        style={'textAlign':'center'}),
 ])
 
 
 
-@callback(
+@callback([
     Output(component_id='ls-loading1',component_property='children'),
+    Output(component_id='ls-loading2',component_property='children'),
+    Output(component_id='ls-loading3',component_property='children')],
     Input('predict','n_clicks'),
     State('name',component_property='value'),
     prevent_initial_call=True
@@ -171,9 +181,9 @@ layout = html.Div([
 
 def update_input_container(n_clicks,value):
     score,pred = predict(value)
-    out = []
-    for i in range(len(pred)):
-        out.append([str(score[i]) + ', ' + str(pred[i]).split('/')[-1].split('.')[0] + '\n'])
-    return out
+    out1 = str(score[0]) + ', ' + str(pred[0]).split('/')[-1].split('.')[0]
+    out2 = str(score[1]) + ', ' + str(pred[1]).split('/')[-1].split('.')[0]
+    out3 = str(score[2]) + ', ' + str(pred[2]).split('/')[-1].split('.')[0]
+    return out1,out2,out3
 
 
