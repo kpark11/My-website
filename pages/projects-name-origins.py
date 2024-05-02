@@ -172,7 +172,7 @@ layout = html.Div([
 def update_input_container(n_clicks,value):
     score,pred = predict(value)
     out = ''
-    for i in len(pred):
+    for i in range(len(pred)):
         out = str(score[i]) + ', ' + out + str(pred[i]) + '\n'
     print(out)
     print(type(out))
