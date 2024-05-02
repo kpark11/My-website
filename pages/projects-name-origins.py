@@ -27,6 +27,7 @@ n_letters = len(all_letters)
 
 def findFiles(name_path): return glob.glob(name_path)
 # Turn a Unicode string to plain ASCII, thanks to https://stackoverflow.com/a/518232/2809427
+
 def unicodeToAscii(s):
     return ''.join(
         c for c in unicodedata.normalize('NFD', s)
@@ -121,14 +122,15 @@ def predict(line, n_predictions=3):
         # Get top N categories
         topv, topi = output.topk(n_predictions, 1, True)
         predictions = []
-    
+        values = []
         for i in range(n_predictions):
             value = topv[0][i].item()
             category_index = topi[0][i].item()
             print('(%.2f) %s' % (value, all_categories[category_index]))
-            predictions.append([value, all_categories[category_index]])
+            values.append(value)
+            predictions.append(all_categories[category_index])
 
-    return predictions
+    return values,predictions
 
 
 
