@@ -163,7 +163,7 @@ layout = html.Div([
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
     Input('predict','n_clicks'),
-    State('output-file1',component_property='value'),
+    State('name',component_property='value'),
     prevent_initial_call=True
 )
 
