@@ -147,7 +147,7 @@ layout = html.Div([
              dcc.Input(
              id='name',
              #children='Park',
-            type='text')],
+            value='First or last name')],
             style={'textAlign':'center',"margin-left": "15px"}),
     html.Div(html.Button('Predict', id='predict', n_clicks=0),style={'textAlign':'center'}),
     html.Br(),
