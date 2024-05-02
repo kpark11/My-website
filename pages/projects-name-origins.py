@@ -153,11 +153,8 @@ layout = html.Div([
     html.Br(),
     html.Div([
        dcc.Loading(id="ls-loading1",
-                   children=[
-                       html.Div(id='output-file1',
-                                children='Enter a name and press Predict',
-                                style={'textAlign':'center'})
-                   ],
+                   children='Type your first or last name and press Enter',
+                   style={'textAlign':'center'},
                    type="circle"),]),
 ])
 
