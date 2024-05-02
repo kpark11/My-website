@@ -16,7 +16,6 @@ import string
 from dash import html,dcc,Input,Output,callback,State
 
 
-print(os.listdir('assets'))
 
 
 name_path = 'assets/data/data/names/*.txt'
@@ -104,6 +103,7 @@ rnn.load_state_dict(torch.load(model_path))
 rnn.eval()
 print(rnn)
 
+
 # Just return an output given a line
 def evaluate(line_tensor):
     hidden = rnn.initHidden()
@@ -162,7 +162,7 @@ layout = html.Div([
 
 @callback(
     Output(component_id='ls-loading1',component_property='children'),
-    Input('predict_button','n_clicks'),
+    Input('predict','n_clicks'),
     State('output-file1',component_property='value'),
     prevent_initial_call=True
 )
