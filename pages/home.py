@@ -9,10 +9,10 @@ from dash import html
 dash.register_page(__name__, path='/',order=0)
 
 
-image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman.JPG?raw=true'
+image_path = 'https://github.com/kpark11/Our-website/blob/main/assets/Kiman.jpeg?raw=true'
 
 layout = html.Div([
-        html.H2("Our Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
+        html.H2("My Story:", style={'textAlign': 'center', 'color': '#FF8903'}),
     html.P("This is my story! I have so much to show and tell!", 
            style={'textAlign':'center'}),
     html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
