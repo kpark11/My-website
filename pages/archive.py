@@ -10,7 +10,7 @@ dash.register_page(__name__,order=3)
 layout = html.Div([
     html.H2('This is archive page',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Br(),
-    html.Div('Our archive is in Github.',style={'textAlign':'center'}),
+    html.Div('My archive is in Github.',style={'textAlign':'center'}),
     html.Br(),
     html.Div('Go to my Github:',style={'textAlign':'center'}),
     html.Div(html.P(dcc.Link(href='https://github.com/kpark11'),
