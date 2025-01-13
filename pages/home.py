@@ -16,7 +16,7 @@ layout = html.Div([
     html.P("This is my story! I have so much to show and tell!", 
            style={'textAlign':'center'}),
     html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
-        style={'width': 350, #'98%''
+        style={'width': 400, #'98%''
                 'height': 650, #'60px'
                 'borderRadius': "5px",
                 'textAlign': "center",
