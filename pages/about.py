@@ -20,10 +20,19 @@ layout = html.Div([
          html.Div([
             html.Div(children=[
                
-               html.P('Kiman Park, Ph.D.:',
+                html.P('Kiman Park, Ph.D.:',
                        style={'textAlign': 'center','font-weight': 'bold'}),
+                html.P('Springboard - Data Scientist Fellow', style={'textAlign':'center'}),
+               
                 html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate',
                        style={'textAlign': 'center'}),
+                
+                html.P('University of Tennessee - Graduate Research Assistant', 
+                       style={'textAlign':'center'}), 
+              
+                html.P('University of Tennessee - Undergraduate Research Assistant', 
+                       style={'textAlign':'center'}), 
+                
                 html.P(dcc.Link(href='kimanpark33@gmail.com'),
                        style={'textAlign': 'center'}),
                     ],
