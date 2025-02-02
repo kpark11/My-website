@@ -19,11 +19,11 @@ layout = html.Div([
          html.Div([
             html.Div(children=[
                
-                dcc.Markdown('**Current Working History:**', style={'font-weight': 'bold'}),
+                dcc.Markdown('**Current Working History:**', className = 'bf underline'),
                 
-                html.P('Springboard - Data Scientist Fellow', style={'textAlign':'center'}),
+                html.P('Springboard - Data Scientist Fellow'),
                 
-                dcc.Markdown('**Previous Working History:**', style={'font-weight': 'bold'}),
+                dcc.Markdown('**Previous Working History:**', className = 'bf underline'),
                
                 html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate'),
                 
@@ -31,7 +31,9 @@ layout = html.Div([
               
                 html.P('University of Tennessee - Undergraduate Research Assistant'), 
                 
-                dcc.Markdown('**Education:**', style={'font-weight': 'bold'}),
+                html.Br(),
+                
+                dcc.Markdown('**Education:**', className = 'bf underline'),
                 
                 dcc.Markdown('**A Doctor of Philosophy (Ph.D.)** in Physical Chemistry | University of Tennessee | MAY 2018 – MAY 2023'), 
                 

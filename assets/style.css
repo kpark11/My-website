@@ -13,6 +13,14 @@
 	width: 50%;
 }
 
+.bf {
+	font-weight: bold;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
 .image {
 	width: 250px; /*98%*/
 	height: 450px; /*60px*/
