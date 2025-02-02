@@ -5,6 +5,10 @@
 	text-align: center;
 }
 
+.ta-left {
+	text-align: left;
+}
+
 .image {
 	width: 400; /*98%*/
 	height: 650; /*60px*/

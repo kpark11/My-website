@@ -22,5 +22,5 @@ layout = html.Div([
            className='ta'),
     html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
         className='image'),
-], className = 'ta')
+], className = 'ta-left')
 
