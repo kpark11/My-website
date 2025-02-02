@@ -25,4 +25,4 @@ layout = html.Div([
          #       ) #for page in dash.page_registry.values() if page["path"].startswith("/projects/")
         ], className = 'ta'),
     #dash.page_container
-])
+],  className = 'ta')

@@ -15,5 +15,5 @@ layout = html.Div([
     html.Div('Go to my Github:', className = 'ta'),
     html.Div(html.P(dcc.Link(href='https://github.com/kpark11'),
                        className = 'ta'),)
-])
+], className = 'ta')
 
