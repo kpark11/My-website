@@ -10,8 +10,8 @@
 }
 
 .image {
-	width: 400; /*98%*/
-	height: 650; /*60px*/
+	width: 400px; /*98%*/
+	height: 650px; /*60px*/
 	border-radius: 5px;
 	text-align: center;
 	margin: 0 auto;
