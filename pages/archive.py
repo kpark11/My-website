@@ -8,12 +8,12 @@ from dash import html,dcc
 dash.register_page(__name__,order=3)
 
 layout = html.Div([
-    html.H2('This is archive page',style={'textAlign': 'center', 'color': '#FF8903'}),
+    html.H2('This is archive page', className = 'ta archive-header'),
     html.Br(),
-    html.Div('My archive is in Github.',style={'textAlign':'center'}),
+    html.Div('My archive is in Github.', className = 'ta'),
     html.Br(),
-    html.Div('Go to my Github:',style={'textAlign':'center'}),
+    html.Div('Go to my Github:', className = 'ta'),
     html.Div(html.P(dcc.Link(href='https://github.com/kpark11'),
-                       style={'textAlign': 'center'}),)
+                       className = 'ta'),)
 ])
 

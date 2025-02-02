@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap);
+
+
+.ta {
+	text-align: center;
+}
+
+.image {
+	width: 400; /*98%*/
+	height: 650; /*60px*/
+	borderRadius: 5px;
+	textAlign: center;
+	margin: 0 auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.p5 {
+	padding: 5px;
+}
+
+.archive-header {
+	color: #FF8903;
+}

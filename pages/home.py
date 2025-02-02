@@ -19,15 +19,8 @@ layout = html.Div([
            and deliver impactful solutions. Experienced in collaborating with cross-functional teams to develop 
            innovative data-driven applications. Committed to continuous learning and staying updated with 
            the latest advancements in data science and technology.""", 
-           style={'textAlign':'center'}),
+           className='ta'),
     html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
-        style={'width': 400, #'98%''
-                'height': 650, #'60px'
-                'borderRadius': "5px",
-                'textAlign': "center",
-                'margin': "0 auto",
-               'display': 'block',
-              'margin-left': 'auto',
-              'margin-right': 'auto'}),
+        className='image'),
 ])
 
