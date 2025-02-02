@@ -26,10 +26,10 @@ layout = html.Div([
     html.Div('npj Quantum Materials, April 4, 2022'),
     html.Link('Vibrational fingerprints of ferroelectric HfO<sub>2</sub>',
               href='https://www.nature.com/articles/s41535-022-00436-8', className = 'ta'),
-    html.Div('npj Quantum Materials, March 18, 2022' className = 'ta'),
+    html.Div('npj Quantum Materials, March 18, 2022', className = 'ta'),
     html.Link('Band-Mott mixing hybridizes the gap in Fe<sub>2</sub>Mo<sub>3</sub>O<sub>8</sub>', 
               href='https://journals.aps.org/prb/abstract/10.1103/PhysRevB.104.195143', className = 'ta'),
-    html.Div('Physical Review B, November 22, 2021' className = 'ta'),
+    html.Div('Physical Review B, November 22, 2021', className = 'ta'),
     html.Link('Jolly green MOF: confinement and photoactivation of photosystem I in the metal-organic framework ZIF-8',
               href='https://pubs.rsc.org/en/content/articlelanding/2019/na/c8na00093j', className = 'ta'),
     html.Div('Nanoscale Advances, October 11, 2018', className = 'ta'),
@@ -37,13 +37,3 @@ layout = html.Div([
               href='https://pubs.rsc.org/en/content/articlelanding/2017/cy/c7cy00073a', className = 'ta'),
     html.Div('Catalysis Science & Technology, April 6, 2017', className = 'ta'),
 ])
-    
-    
-    
-    html.Div('My archive is in Github.', className = 'ta'),
-    html.Br(),
-    html.Div('Go to my Github:', className = 'ta'),
-    html.Div(html.P(dcc.Link(href='https://github.com/kpark11'),
-                       className = 'ta'),)
-])
-
