@@ -9,9 +9,13 @@
 	text-align: left;
 }
 
+.w50 {
+	width: 50%;
+}
+
 .image {
-	width: 400px; /*98%*/
-	height: 650px; /*60px*/
+	width: 300px; /*98%*/
+	height: 450px; /*60px*/
 	border-radius: 5px;
 	text-align: center;
 	margin: 0 auto;
