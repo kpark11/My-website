@@ -19,13 +19,13 @@ server = app.server
 background = 'https://github.com/kpark11/Our-website/blob/main/assets/statistics-major.webp?raw=true'
 
 
-app.title = "Kiman Park"
+app.title = "Kiman Park, Ph.D."
 app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 #---------------------------------------------------------------------------------
 
 app.layout = html.Div([
     
-    html.H1("Kiman Park",
+    html.H1("Kiman Park, Ph.D.",
             style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
         html.Div([
             html.Div(

@@ -12,30 +12,33 @@ from dash import dcc,State,html
 dash.register_page(__name__,order=2)
 
 layout = html.Div([
-        html.H2("About me:",
-                style={'textAlign': 'center', 'color': '#FF8903'}),
+        html.H2("About me:", className = 'ta archive-header'),
         html.Br(),
         
         
          html.Div([
             html.Div(children=[
                
-                html.P('Kiman Park, Ph.D.:',
-                       style={'textAlign': 'center','font-weight': 'bold'}),
+                dcc.Markdown('**Current Working History:**', style={'font-weight': 'bold'}),
+                
                 html.P('Springboard - Data Scientist Fellow', style={'textAlign':'center'}),
+                
+                dcc.Markdown('**Previous Working History:**', style={'font-weight': 'bold'}),
                
-                html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate',
-                       style={'textAlign': 'center'}),
+                html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate'),
                 
-                html.P('University of Tennessee - Graduate Research Assistant', 
-                       style={'textAlign':'center'}), 
+                html.P('University of Tennessee - Graduate Research Assistant'), 
               
-                html.P('University of Tennessee - Undergraduate Research Assistant', 
-                       style={'textAlign':'center'}), 
+                html.P('University of Tennessee - Undergraduate Research Assistant'), 
                 
-                html.P(dcc.Link(href='kimanpark33@gmail.com'),
-                       style={'textAlign': 'center'}),
-                    ],
+                dcc.Markdown('**Education:**', style={'font-weight': 'bold'}),
+                
+                dcc.Markdown('**A Doctor of Philosophy (Ph.D.)** in Physical Chemistry | University of Tennessee | MAY 2018 – MAY 2023'), 
+                
+                dcc.Markdown('**A Bachelor of Science (B.S.)** in Chemistry | University of Tennessee | AUG 2014 – MAY 2018'),                 
+                
+                html.P(dcc.Link(href='kimanpark33@gmail.com')),
+            ], className = 'ta'
                         #style={
                         #'backgroundColor':'darkslategray',
                         #'color':'lightsteelblue',
@@ -46,9 +49,4 @@ layout = html.Div([
                         #'display':'inline-block'}
                         ),
             ]),
-         
-         
-        
-        
-        
 ])
