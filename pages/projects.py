@@ -13,7 +13,7 @@ dash.register_page(__name__,order=1)
 layout = html.Div([
     html.H2('This is my projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Div([
-            html.A('Polarization Matrix',href='https://reflection-list.onrender.com/',target="_blank"),
+            html.P(dcc.Link('Polarization Matrix',href='https://reflection-list.onrender.com/')),
             html.P(dcc.Link('Automobile Sales Statistics', href=dash.get_relative_path('/projects-automobile'))),
             html.P(dcc.Link('Origin of Names using recurrent Neural Network', href=dash.get_relative_path('/projects-name-origins'))),
             html.Br(),
