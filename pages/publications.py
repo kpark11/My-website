@@ -78,6 +78,31 @@ layout = html.Div([
             dangerously_allow_html=True,
         ),
     
+    html.H2('Other websites to look at:', className = 'ta archive-header'),
+    html.Br(),
+    
+    dcc.Markdown(
+            [
+            """
+            <dccLink href="https://scholar.google.com/citations?user=EJFzDYEAAAAJ&hl=en">
+                Google Scholar
+            </dccLink>
+            """
+            ],
+            dangerously_allow_html=True, className = 'inlineB'
+        ),
+    
+    dcc.Markdown(
+            [
+            """
+            <dccLink href="https://www.researchgate.net/profile/Kiman-Park-2">
+                ResearchGate
+            </dccLink>
+            """
+            ],
+            dangerously_allow_html=True, className = 'inlineB'
+        ),
+    
     
     
 ], className = 'ta')
