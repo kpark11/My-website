@@ -57,7 +57,8 @@ layout = html.Div([
             id='select-year',
             options=[{'label': i, 'value': i} for i in year_list],
             value='Yearly Statistics',
-            placeholder='Select Years'
+            placeholder='Select Years',
+            disabled=False,
         )),
     #html.Div([
             dcc.Loading(id="output-loading-1",
@@ -78,6 +79,7 @@ layout = html.Div([
 # Define the callback function to update the input container based on the selected statistics
 @callback(
     Output(component_id='output-loading-1', component_property='children'),
+    Output(component_id='select-year',component_property='disabled')
     [Input(component_id='dropdown-statistics', component_property='value'), Input(component_id='select-year', component_property='value')]
 )
 
@@ -130,7 +132,7 @@ def update_output_container(selected_statistics, input_year):
             html.Div(className='chart-item', 
                      children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],
                      style={'display': 'flex',})
-            ]
+            ], True
  # Yearly Statistic Report Plots                             
     elif (input_year and selected_statistics=='Yearly Statistics'):
         yearly_data = data[data['Year'] == input_year]
@@ -171,7 +173,7 @@ def update_output_container(selected_statistics, input_year):
                          style={'display': 'flex'}),
                 html.Div(className='chart-item', children=[html.Div(Y_chart3),html.Div(Y_chart4)],
                          style={'display': 'flex'})
-                ]
+                ], False
         
     else:
         return None
