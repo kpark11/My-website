@@ -30,7 +30,7 @@ layout = html.Div([
                     className="card-text",
                 ),
             ]),
-    ], color="dark", outline=True, className = 'ta w50 rounded', style={'justify-content':'center'}),
+    ], color="dark", outline=True, className = 'ta w50 rounded home-card',),
     html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
              className='image'),
 ], className = 'ta')
