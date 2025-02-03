@@ -39,7 +39,7 @@
 	border-radius: 5px;
 	text-align: center;
 	margin: 0 auto;
-	display: block;
+	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
 	dipslay: inline-block;
