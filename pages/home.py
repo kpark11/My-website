@@ -15,10 +15,10 @@ layout = html.Div([
     html.H2("Who I am:", className = 'ta archive-header'),
     html.Div([
         dbc.Card([
-            dbc.CardHeader("Multidisciplinary Scientist"),
+            dbc.CardHeader("Multidisciplinary Scientist", className = 'inlineB'),
             dbc.CardBody(
                 [
-                    html.H5("Kiman Park, Ph.D.", className="card-title"),
+                    html.H5("Kiman Park, Ph.D.", className="card-title inlineB"),
                     html.P(
                         """
                         Highly analytical data scientist with a strong foundation in physics, 
@@ -28,12 +28,12 @@ layout = html.Div([
                         develop innovative data-driven applications. Committed to continuous learning and staying 
                         updated with the latest advancements in data science and technology.
                         """,
-                        className="card-text",
+                        className="card-text inlineB",
                     ),
-                ]),
+                ], className = "inlineB"),
         ], color="dark", outline=True, className = 'ta w50 rounded inlineB',),
         html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
                  className='image'),
     ], className='inlineB'),
-], className = 'ta inlineB')
+], className = 'ta')
 
