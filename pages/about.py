@@ -39,6 +39,8 @@ layout = html.Div([
                 
                 dcc.Markdown('**A Bachelor of Science (B.S.)** in Chemistry | University of Tennessee | AUG 2014 – MAY 2018'),                 
                 
+                html.Br(),
+                
                 html.H2("Contact me on:", className = 'ta archive-header'),
                 
                 html.P(dcc.Link(href='kimanpark33@gmail.com')),
