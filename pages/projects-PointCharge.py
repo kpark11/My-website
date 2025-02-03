@@ -106,7 +106,8 @@ layout = html.Div([
                 dcc.Markdown([
                     '''
                     You can click on the "get energies" button to see the calculated energies with 
-                    B<sup>l</sup><sub>m</sub> parameters and show them in the results. See below. 
+                    B<sup>l</sup><sub>m</sub> parameters and show them in the results. It will also give
+                    eigenvectors as well. See below.
                     '''
                     ],
                     dangerously_allow_html=True,),
