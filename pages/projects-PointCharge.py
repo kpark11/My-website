@@ -79,6 +79,22 @@ layout = html.Div([
                     '''
                     ],
                     dangerously_allow_html=True,),
+                dcc.Markdown([
+                    '''
+                    As you can see, you can save your workspace, so you do not have to input all of the 
+                    parameters again. You can also see the r<sub>l</sub> and theta parameters that I am 
+                    using. 
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                dcc.Markdown([
+                    '''
+                    Furthermore, you can look at the log that it creates to see previous values and energies
+                    that you calculated. You can clear the log as well. Help and operational manual is under
+                    construction as of now.
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
                 
             ], className = 'ta'),
             ]),
