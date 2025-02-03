@@ -51,8 +51,9 @@ layout = html.Div([
                 
                 html.H2("Contact me on:", className = 'ta archive-header'),
                 
-                html.P(dcc.Link(href='kimanpark33@gmail.com')),
-                html.P(dcc.Link('LinkedIn (ctrl + "click")',href='https://www.linkedin.com/in/kiman-park/')),
+                html.P(dcc.Link(href='kimanpark33@gmail.com',target='_blank')),
+                html.P(dcc.Link('LinkedIn',target='_blank',
+                                href='https://www.linkedin.com/in/kiman-park/')),
             ], className = 'ta'
                         #style={
                         #'backgroundColor':'darkslategray',
