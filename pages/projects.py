@@ -14,8 +14,9 @@ layout = html.Div([
     html.H2('This is my projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Br(),
     html.Div([
+        html.P(dcc.Link('Pneumonia Detection (ctrl + "click")',href='https://github.com/kpark11/Pneumonia_Detection/blob/master/Pneumonia_Detection.ipynb')),
         html.P(dcc.Link('Point-Charge Model', href=dash.get_relative_path('/projects-pointcharge'))),
-        html.P(dcc.Link('Polarization Matrix',href='https://reflection-list.onrender.com/')),
+        html.P(dcc.Link('Polarization Matrix (ctrl + "click")',href='https://reflection-list.onrender.com/')),
         html.P(dcc.Link('Automobile Sales Statistics', href=dash.get_relative_path('/projects-automobile'))),
         html.P(dcc.Link('Origin of Names using recurrent Neural Network', href=dash.get_relative_path('/projects-name-origins'))),
         html.Br(),

@@ -12,7 +12,7 @@ layout = html.Div([
     html.Br(),
     html.Div('My archive is in Github.', className = 'ta'),
     html.Br(),
-    html.Div('Go to my Github:', className = 'ta'),
+    html.Div('Go to my Github (ctrl + "click"):', className = 'ta'),
     html.Div(html.P(dcc.Link(href='https://github.com/kpark11'),
                        className = 'ta'),)
 ], className = 'ta')

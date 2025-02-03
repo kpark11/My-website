@@ -95,6 +95,22 @@ layout = html.Div([
                     '''
                     ],
                     dangerously_allow_html=True,),
+                dcc.Markdown([
+                    '''
+                    Lastly, it will also calculate Sping-Orbit coupling strength, Spin-Spin coupling strength, and 
+                    Moleculate Field strength as you can see below. 
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                html.Img(src=os.path.join(image_path,'5.PNG?raw=true'),),
+                dcc.Markdown([
+                    '''
+                    You can click on the "get energies" button to see the calculated energies with 
+                    B<sup>l</sup><sub>m</sub> parameters and show them in the results. See below. 
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                html.Img(src=os.path.join(image_path,'6.PNG?raw=true'),),
                 
             ], className = 'ta'),
             ]),
