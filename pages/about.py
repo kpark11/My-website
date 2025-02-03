@@ -35,11 +35,11 @@ layout = html.Div([
                 
                 dcc.Markdown('**Education:**', className = 'bf underline'),
                 
-                dcc.Markdown('**A Doctor of Philosophy (Ph.D.)** in Physical Chemistry', 
+                dcc.Markdown('<b>A Doctor of Philosophy (Ph.D.)</b> in Physical Chemistry', 
                              dangerously_allow_html=True,),
                 dcc.Markdown('University of Tennessee, May 2018 – May 2023'), 
                 
-                dcc.Markdown('**A Bachelor of Science (B.S.)** in Chemistry', 
+                dcc.Markdown('<b>A Bachelor of Science (B.S.)</b> in Chemistry', 
                              dangerously_allow_html=True,),
                 dcc.Markdown('University of Tennessee, Aug 2014 – May 2018'),                 
                 

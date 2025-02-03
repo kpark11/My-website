@@ -2,7 +2,6 @@
 
 
 .ta {
-	margin: 0 auto;
 	text-align: center;
 }
 
@@ -11,9 +10,11 @@
 }
 
 .w50 {
+	text-align: center;
 	width: 600px;
 	word-wrap: break-word;
 	justify-content: center;
+	margin: 0 auto;
 }
 
 .rounded {
