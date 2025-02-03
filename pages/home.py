@@ -33,7 +33,7 @@ layout = html.Div([
                 ]),
         ], color="dark", outline=True, className = 'ta w50 rounded',),
         html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
-                 className='image'),
+                 className='image rounded'),
     ]),
 ], className = 'ta')
 
