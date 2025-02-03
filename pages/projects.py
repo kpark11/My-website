@@ -14,12 +14,13 @@ layout = html.Div([
     html.H2('This is my projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Br(),
     html.Div([
-            html.P(dcc.Link('Polarization Matrix',href='https://reflection-list.onrender.com/')),
-            html.P(dcc.Link('Automobile Sales Statistics', href=dash.get_relative_path('/projects-automobile'))),
-            html.P(dcc.Link('Origin of Names using recurrent Neural Network', href=dash.get_relative_path('/projects-name-origins'))),
-            html.Br(),
-            html.Br(),
-            html.A('More in Github',href='https://github.com/kpark11',target='_blank'),
+        html.P(dcc.Link('Point-Charge Model', href=dash.get_relative_path('/projects-PointCharge'))),
+        html.P(dcc.Link('Polarization Matrix',href='https://reflection-list.onrender.com/')),
+        html.P(dcc.Link('Automobile Sales Statistics', href=dash.get_relative_path('/projects-automobile'))),
+        html.P(dcc.Link('Origin of Names using recurrent Neural Network', href=dash.get_relative_path('/projects-name-origins'))),
+        html.Br(),
+        html.Br(),
+        html.A('More in Github',href='https://github.com/kpark11',target='_blank'),
         
          #   html.Div(
          #       dcc.Link(f"{page['name']}", href=dash.get_relative_path('/projects/autombile'))
