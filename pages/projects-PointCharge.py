@@ -20,6 +20,7 @@ layout = html.Div([
         
          html.Div([
             html.Div(children=[
+                dcc.Markdown('**Using the software:**', className = 'bf underline'),
                 dcc.Markdown([
                     '''
                     These software and package allow researchers to calculate the optical properties
@@ -112,6 +113,40 @@ layout = html.Div([
                     ],
                     dangerously_allow_html=True,),
                 html.Img(src=os.path.join(image_path,'6.PNG?raw=true'),),
+                
+                html.Br(),
+                dcc.Markdown('**Using the Python package:**', className = 'bf underline'),
+                dcc.Markdown([
+                    '''
+                    You can use Python to calculate optical properties using this package! You can do so much more!
+                    Similarly, you have to input metal ion, L, S, and ligand positions to calculate 
+                    B<sup>l</sup><sub>m</sub> parameters.
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                html.Img(src=os.path.join(image_path,'7.PNG?raw=true'),),
+                dcc.Markdown([
+                    '''
+                    Here is the result in the terminal.
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                html.Img(src=os.path.join(image_path,'8.PNG?raw=true'),),
+                dcc.Markdown([
+                    '''
+                    Or you can input your own B<sup>l</sup><sub>m</sub> parameters.
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                html.Img(src=os.path.join(image_path,'9.PNG?raw=true'),),
+                dcc.Markdown([
+                    '''
+                    Now, you can diagonalize it and calculate energies and eigenvectors. 
+                    It will show the energies and plot them
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                html.Img(src=os.path.join(image_path,'10.PNG?raw=true'),),
                 
             ], className = 'ta'),
             ]),
