@@ -147,6 +147,28 @@ layout = html.Div([
                     ],
                     dangerously_allow_html=True,),
                 html.Img(src=os.path.join(image_path,'10.PNG?raw=true'),),
+                html.Img(src=os.path.join(image_path,'11.PNG?raw=true'),),
+                dcc.Markdown([
+                    '''
+                    Once you have all of parameters and energies, you can simulate various properties.
+                    The below is the magnetic moment of each axis and electronic states. 
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                html.Img(src=os.path.join(image_path,'12.PNG?raw=true'),),
+                html.Img(src=os.path.join(image_path,'13.PNG?raw=true'),),
+                dcc.Markdown([
+                    '''
+                    You can also calculate and simulate specific heat, magnetic entropy, 
+                    Zeeman effect, and magnetic susceptibility
+                    '''
+                    ],
+                    dangerously_allow_html=True,),
+                html.Img(src=os.path.join(image_path,'14.PNG?raw=true'),),
+                html.Img(src=os.path.join(image_path,'15.PNG?raw=true'),),
+                html.Img(src=os.path.join(image_path,'16.PNG?raw=true'),),
+                html.Img(src=os.path.join(image_path,'17.PNG?raw=true'),),
+                html.Img(src=os.path.join(image_path,'18.PNG?raw=true'),),
                 
             ], className = 'ta'),
             ]),
