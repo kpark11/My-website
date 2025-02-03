@@ -9,7 +9,7 @@ import dash
 from dash import dcc,State,html
 
 
-dash.register_page(__name__,order=2)
+dash.register_page(__name__,order=1)
 
 layout = html.Div([
         html.H2("About me:", className = 'ta archive-header'),
@@ -19,11 +19,11 @@ layout = html.Div([
          html.Div([
             html.Div(children=[
                
-                dcc.Markdown('**Current Working History:**', className = 'bf underline'),
+                dcc.Markdown('**Current Relevant Experience:**', className = 'bf underline'),
                 
                 html.P('Springboard - Data Scientist Fellow'),
                 
-                dcc.Markdown('**Previous Working History:**', className = 'bf underline'),
+                dcc.Markdown('**Previous Relevant Experience:**', className = 'bf underline'),
                
                 html.P('Oak Ridge National Laboratory - Postdoctoral Research Associate'),
                 

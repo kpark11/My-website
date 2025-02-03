@@ -5,7 +5,7 @@
 import dash
 from dash import html, dcc
 
-dash.register_page(__name__,order=1)
+dash.register_page(__name__,order=2)
 
 
 layout = html.Div([
