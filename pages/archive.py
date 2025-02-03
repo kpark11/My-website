@@ -5,7 +5,7 @@
 import dash
 from dash import html,dcc
 
-dash.register_page(__name__,order=3)
+dash.register_page(__name__,order=4)
 
 layout = html.Div([
     html.H2('This is archive page', className = 'ta archive-header'),

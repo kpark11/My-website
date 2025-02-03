@@ -5,8 +5,6 @@
 import dash
 from dash import html, dcc
 
-
-
 dash.register_page(__name__,order=1)
 
 
@@ -14,6 +12,8 @@ layout = html.Div([
     html.H2('This is my projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Br(),
     html.Div([
+        html.P(dcc.Link('Pancreatic Cancer Detection (ctrl + "click")', href='https://github.com/kpark11/Springboard/blob/master/Capstone-Project/SERS_Raman_Pancreatic_Cancer/Capstone_Presentation.pdf')),
+        html.P(dcc.Link("Driver's Fatigue Detection (ctrl + 'click')",href='https://github.com/kpark11/RTI-simulator/blob/master/The%20Detection%20of%20Driver%E2%80%99s%20Fatigue%20Level.pdf')),
         html.P(dcc.Link('Pneumonia Detection (ctrl + "click")',href='https://github.com/kpark11/Pneumonia_Detection/blob/master/Pneumonia_Detection.ipynb')),
         html.P(dcc.Link('Point-Charge Model', href=dash.get_relative_path('/projects-pointcharge'))),
         html.P(dcc.Link('Polarization Matrix (ctrl + "click")',href='https://reflection-list.onrender.com/')),

@@ -11,7 +11,7 @@ from dash import html,dcc
 dash.register_page(__name__,order=3)
 
 layout = html.Div([
-    html.H2('Publications ((ctrl + "click")):', className = 'ta archive-header'),
+    html.H2('Publications (ctrl + "click"):', className = 'ta archive-header'),
     html.Br(),
     
     dcc.Markdown(
