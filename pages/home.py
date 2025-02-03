@@ -29,8 +29,8 @@ layout = html.Div([
                     """,
                     className="card-text",
                 ),
-            ], className = 'ta w50'),
-    ]),
+            ]),
+    ], color="dark", outline=True, className = 'ta w50'),
     html.Img(src=image_path,#app.get_asset_url('Kiman-Abby.jpeg'),
              className='image'),
 ], className = 'ta')
