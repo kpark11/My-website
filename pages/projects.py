@@ -12,6 +12,8 @@ layout = html.Div([
     html.H2('Recent projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Br(),
     html.Div([
+        html.P('AI email (I can show it by connecting with me)'),
+        
         html.P(dcc.Link('Pancreatic Cancer Detection',target='_blank',
                         href='https://github.com/kpark11/Springboard/blob/master/Capstone-Project/SERS_Raman_Pancreatic_Cancer/Capstone_Presentation.pdf')),
         html.P(dcc.Link("Driver's Fatigue Detection",target='_blank',
