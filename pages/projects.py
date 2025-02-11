@@ -12,6 +12,8 @@ layout = html.Div([
     html.H2('Recent projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
     html.Br(),
     html.Div([
+        html.P('Avian Flu (Coming Soon...)'),
+        
         html.P('AI email (I can show it by connecting with me)'),
         
         html.P(dcc.Link('Pancreatic Cancer Detection',target='_blank',
