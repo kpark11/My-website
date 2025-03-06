@@ -1,54 +1,134 @@
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap);
+body {
+	--s: 50px; /* control the size*/
+	--c1: #1a2030;
+	--c2: #0f9177;
+	--c3: #fdebad;
+	--c4: #d34434;
+	--c5: #b5d999;
+	
+	--_g: radial-gradient(#0000 70%,var(--c1) 71%);
+	background:
+	  var(--_g),var(--_g) calc(var(--s)/2) calc(var(--s)/2),
+	  conic-gradient(var(--c2) 25%,var(--c3) 0 50%,var(--c4) 0 75%,var(--c5) 0);
+	background-size: var(--s) var(--s);
+  }
 
+h1 {
+	overflow: hidden;
+	border-right: .15em solid white;
+	white-space: nowrap;
+	margin: auto; 
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+	letter-spacing: .15em;
+	animation: 
+		typing 2s steps(20, end),
+		blink-caret .75s step-end infinite;
+	font-family: "Vibur", sans-serif;
+	color: black;
+	text-align: center;
+	font-size: 50px;
+	font-weight: bold;
+	width: 620px;
+	cursor: default;
+	background-color: white;
+	border-radius: 20px;
+}
+  
+/* The typing effect */
+@keyframes typing {
+	from { width: 0 }
+	to { width: 600px }
+}
 
-.ta {
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: rgb(53, 244, 0); }
+}
+
+h2 {
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+	/* animation: 
+		typing 2s steps(20, end),
+		blink-caret .75s step-end infinite; */
+	font-style: fantasy;
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: default;
+	background-color: white;
+	border-radius: 20px;
+	width: 40%;
+}
+
+p {
 	text-align: center;
 }
 
-.ta-left {
-	text-align: left;
-}
-
-.w50 {
+.menu {
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+	color: white;
 	text-align: center;
-	width: 600px;
-	word-wrap: break-word;
-	justify-content: center;
-	margin: 0 auto;
+}
+.submenu {
+	display: inline-block;
+	margin: auto;
+	margin-left: 10px;
+	padding: 10px;
+	background-color: white;
+	font-weight: bold;
+	color: white;
+	border: solid white;
+	border-radius: 10px;
+	opacity: 1;
+	transition: transform 0.5s ease-in-out;
+}
+.submenu:hover {
+	transform: scale(1.5);
 }
 
-.rounded {
-	border-radius: 80px;
+.card {
+	margin: auto;
+	margin-top: 10px;
+	border-radius: 20px;
+	text-align: center;
+	width: 50%;
+	border: 0;
+	transition: transform 0.5s ease-in-out;
+}
+.card:hover {
+	transform: scale(1.2);
 }
 
-.inlineB{
-	dipslay: inline-block;
-}
-
-.bf {
+.CardHeader {
+	font-size: 20px;
 	font-weight: bold;
 }
 
-.underline {
-	text-decoration: underline;
+.cardBody {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
-.image {
-	width: 250px; /*98%*/
-	height: 450px; /*60px*/
-	border-radius: 5px;
+.myPhoto {
+	margin: auto;
 	text-align: center;
-	margin: 0 auto;
-	display: inline-block;
-	margin-left: auto;
-	margin-right: auto;
-	dipslay: inline-block;
+	border-radius: 10px;
+	aspect-ratio: 1/1.5;
+	width: 60%
 }
 
-.p5 {
-	padding: 5px;
-}
-
-.archive-header {
-	color: #FF8903;
+.bf, .underline {
+	font-weight: bold;
+	text-decoration: underline;
 }

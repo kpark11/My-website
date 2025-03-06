@@ -13,8 +13,8 @@ dash.register_page(__name__,order=3)
 layout = html.Div([
     html.H2('Publications (ctrl + "click"):', className = 'ta archive-header'),
     html.Br(),
-    
-    dcc.Markdown(
+    html.Div(children=[
+        dcc.Markdown(
             [
                 """
             <dccLink href="https://pubs.acs.org/journal/inocaj">
@@ -77,10 +77,10 @@ layout = html.Div([
             ],
             dangerously_allow_html=True,
         ),
-    html.Br(),
+    ], className='card'),
     
     html.H2('Other websites to look at:', className = 'ta archive-header'),
-    html.Br(),
+    
     
     html.Div([
         dcc.Markdown(
@@ -104,7 +104,7 @@ layout = html.Div([
                 ],
                 dangerously_allow_html=True, className = 'inlineB'
             ),
-    ], className = 'inlineB')
+    ], className = 'card')
     
     
 ], className = 'ta')

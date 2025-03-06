@@ -12,7 +12,10 @@ import dash_bootstrap_components as dbc
 import os
 
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX], pages_folder="/opt/render/project/src/pages")
+# app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX], pages_folder="/opt/render/project/src/pages")
+
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX], pages_folder=os.path.join(os.path.dirname(__file__), 'pages'))
+
 
 server = app.server
 
@@ -25,13 +28,12 @@ app.style = {'textAlign':'center','color':'#503D36','font-size':24}
 
 app.layout = html.Div([
     
-    html.H1("Kiman Park, Ph.D.",
-            style={'textAlign': 'center', 'color': '#3E57B0','font-size':50}), 
+    html.H1("Kiman Park, Ph.D.",), 
         html.Div([
             html.Div(
-                dcc.Link(f"{page['name']}", href=page["path"])
+                html.Div(dcc.Link(f"{page['name']}", href=page["path"])), className = 'submenu'
                 ) for page in dash.page_registry.values() if not page["path"].startswith("/projects-")
-                ], className = 'ta-left p5'),
+                ], className='menu'),
             dash.page_container
     ])
     
