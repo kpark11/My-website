@@ -21,11 +21,8 @@ h1 {
 	margin: auto; 
 	padding-left: 10px;
 	padding-right: 10px;
-	margin-top: 10px;
+	margin-top: 0px;
 	letter-spacing: .15em;
-	animation: 
-		typing 2s steps(20, end),
-		blink-caret .75s step-end infinite;
 	font-family: "Vibur", sans-serif;
 	color: black;
 	text-align: center;
@@ -35,12 +32,16 @@ h1 {
 	cursor: default;
 	background-color: white;
 	border-radius: 20px;
+	animation: 
+		typing 3s steps(20, end) infinite,
+		blink-caret .75s step-end infinite;
+	
 }
   
 /* The typing effect */
 @keyframes typing {
-	from { width: 0 }
-	to { width: 600px }
+	from, to { width: 0 }
+	50%, 60%, 70%, 80% { width: 620px }
 }
 
 /* The typewriter cursor effect */
@@ -57,7 +58,7 @@ h2 {
 		typing 2s steps(20, end),
 		blink-caret .75s step-end infinite; */
 	font-style: fantasy;
-	color: black;
+	color: #FF8903;
 	font-size: 30px;
 	font-weight: bold;
 	cursor: default;
@@ -68,6 +69,10 @@ h2 {
 
 p {
 	text-align: center;
+}
+
+a {
+
 }
 
 .menu {
@@ -131,4 +136,12 @@ p {
 .bf, .underline {
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+.w1 {
+	width: 80%
+}
+
+.w2 {
+	width: 30%
 }

@@ -77,7 +77,7 @@ layout = html.Div([
             ],
             dangerously_allow_html=True,
         ),
-    ], className='card'),
+    ], className='card w1'),
     
     html.H2('Other websites to look at:', className = 'ta archive-header'),
     
@@ -102,12 +102,12 @@ layout = html.Div([
                 </dccLink>
                 """
                 ],
-                dangerously_allow_html=True, className = 'inlineB'
+                dangerously_allow_html=True, className = ''
             ),
-    ], className = 'card')
+    ], className = 'card w2')
     
     
-], className = 'ta')
+], className = '')
 
 
 

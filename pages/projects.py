@@ -9,7 +9,7 @@ dash.register_page(__name__,order=2)
 
 
 layout = html.Div([
-    html.H2('Recent projects: ',style={'textAlign': 'center', 'color': '#FF8903'}),
+    html.H2('Recent projects: '),
     html.Div([
         html.P(dcc.Link('Chrome Extension Analyzer',target='_blank',
                         href='https://chromeextensionanalyzer.onrender.com//')),

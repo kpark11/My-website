@@ -12,7 +12,7 @@ from dash import dcc,State,html
 dash.register_page(__name__,order=1)
 
 layout = html.Div([
-        html.H2("About me:", className = 'ta archive-header'),       
+        html.H2("About me:", className = ''),       
         html.Div([
             html.Div(children=[
                 html.Div(children=[
@@ -44,23 +44,14 @@ layout = html.Div([
                                 University of Tennessee, Aug 2014 – May 2018
                                 '''],
                                 dangerously_allow_html=True,),
-                ], className='card'),
+                ], className='card w1'),
                 
-                html.H2("Contact me on:", className = 'ta archive-header'),
+                html.H2("Contact me on:", className = ''),
                 html.Div(children=[
-                    html.P(dcc.Link(href='kimanpark33@gmail.com',target='_blank')),
-                    html.P(dcc.Link('LinkedIn',target='_blank',
-                                    href='https://www.linkedin.com/in/kiman-park/')),
-                ], className='card'),
-            ], className = 'ta'
-                        #style={
-                        #'backgroundColor':'darkslategray',
-                        #'color':'lightsteelblue',
-                        #'height':'100px',
-                        #'margin-left':'10px',
-                        #'width':'49%',
-                        #'text-align':'center',
-                        #'display':'inline-block'}
-                        ),
+                    dcc.Link(href='kimanpark33@gmail.com',target='_blank'),
+                    dcc.Link('LinkedIn',target='_blank',
+                                    href='https://www.linkedin.com/in/kiman-park/'),
+                ], className='card w2'),
+            ], className = ''),
             ]),
 ])
