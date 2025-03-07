@@ -12,9 +12,9 @@ import dash_bootstrap_components as dbc
 import os
 
 
-# app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX], pages_folder="/opt/render/project/src/pages")
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX], pages_folder="/opt/render/project/src/pages")
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX], pages_folder=os.path.join(os.path.dirname(__file__), 'pages'))
+# app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUX], pages_folder=os.path.join(os.path.dirname(__file__), 'pages'))
 
 
 server = app.server
@@ -39,4 +39,3 @@ app.layout = html.Div([
     
 if __name__ == '__main__':
     app.run_server(debug=True)
-

@@ -19,8 +19,8 @@ from dash import html,dcc,Input,Output,callback,State
 name_path = 'assets/data/data/names/*.txt'
 model_path = 'assets/char-rnn-classification.pht'
 
-# name_path = os.path.join(os.path.dirname(__file__), '../assets/data/data/names/*.txt')
-# model_path = os.path.join(os.path.dirname(__file__), '../assets/char-rnn-classification.pht')
+name_path = os.path.join(os.path.dirname(__file__), '../assets/data/data/names/*.txt')
+model_path = os.path.join(os.path.dirname(__file__), '../assets/char-rnn-classification.pht')
 
 
 all_letters = string.ascii_letters + " .,;'"
@@ -140,33 +140,34 @@ dash.register_page(__name__)
 
 
 layout = html.Div([
-    html.H2('This predicts the origin of the name',style={'textAlign': 'center', 'color': '#FF8903'}),
-    html.Br(),
-    html.Div('This is based on Sean Robert',style={'textAlign':'center'}),
-    html.Div('https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html',style={'textAlign':'center'}),
-    html.Br(),
-    html.Br(),
-    html.Div([html.Label("Type your last name: "),
-             dcc.Input(
-             id='name',
-             #children='Park',
-            value='Last name')],
-            style={'textAlign':'center',"margin-left": "15px"}),
-    html.Div(html.Button('Predict', id='predict', n_clicks=0),style={'textAlign':'center'}),
-    html.Br(),
-    html.Div([
-       dcc.Loading(id="ls-loading1",
-                   children='Type your last name and press Enter',
-                   type="circle"),
-       html.Br(),
-       dcc.Loading(id="ls-loading2",
-                   children='',
-                   type="circle"),
-       html.Br(),
-       dcc.Loading(id="ls-loading3",
-                   children='',
-                   type="circle"),],
-       style={'textAlign':'center'}),
+    html.H2('This predicts the origin of the name', style={'width':'70%'}),
+    html.Div(children=[
+        html.Div('This is based on Sean Robert'),
+        html.Div('https://pytorch.org/tutorials/intermediate/char_rnn_classification_tutorial.html'),
+        html.Br(),
+        html.Br(),
+        html.Div([html.Label("Type your last name: "),
+                dcc.Input(
+                id='name',
+                #children='Park',
+                value='Last name')],
+                style={'textAlign':'center',"margin-left": "15px"}),
+        html.Div(html.Button('Predict', id='predict', n_clicks=0)),
+        html.Br(),
+        html.Div([
+        dcc.Loading(id="ls-loading1",
+                    children='Type your last name and press Enter',
+                    type="circle"),
+        html.Br(),
+        dcc.Loading(id="ls-loading2",
+                    children='',
+                    type="circle"),
+        html.Br(),
+        dcc.Loading(id="ls-loading3",
+                    children='',
+                    type="circle"),],
+        style={'textAlign':'center'}),
+    ], className='card'),
 ])
 
 

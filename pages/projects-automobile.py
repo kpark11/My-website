@@ -37,37 +37,37 @@ year_list = [i for i in range(1980, 2024, 1)]
 
 layout = html.Div([
     #TASK 2.1 Add title to the dashboard
-    html.H2("Automobile Statistics Dashboard",style={'textAlign': 'center', 'color': '#FF8903'}),#May include style for title
-    html.P("This is from the Coursera exercise.",style={'textAlign':'center'}),
-    html.P("You can visualize automobile statistics by yearly or during recession",style={'textAlign':'center'}),
-    html.P("For recession period, you do not need to select a year.",style={'textAlign':'center'}),
+    html.H2("Automobile Statistics Dashboard"),
+    html.Div(children=[
+        html.P("This is from the Coursera exercise."),
+        html.P("You can visualize automobile statistics by yearly or during recession"),
+        html.P("For recession period, you do not need to select a year."),
 
-    html.Div([#TASK 2.2: Add two dropdown menus
-        html.Label("Select Statistics:"),
-        dcc.Dropdown(
-            id='dropdown-statistics',
-            options=[{'label': 'Yearly Statistics', 'value': 'Yearly Statistics'},
-                    {'label': 'Recession Period Statistics', 'value': 'Recession Period Statistics'}
-                           ],
-            value='Select Statistics',
-            placeholder='Select a report type'
-        )
-                      ]),
-    html.Div(dcc.Dropdown(
-            id='select-year',
-            options=[{'label': i, 'value': i} for i in year_list],
-            value='Yearly Statistics',
-            placeholder='Select Years',
-        )),
-    #html.Div([
-            dcc.Loading(id="output-loading-1",
-                children=[html.Div(id='output-container1', className='chart-grid', 
-             style={'display':'flex'}),
-                          html.Div(id='output-container2', className='chart-grid', 
-             style={'display':'flex'})],
-            type="circle")
-     #]),
-])
+        html.Div([#TASK 2.2: Add two dropdown menus
+            html.Label("Select Statistics:"),
+            dcc.Dropdown(
+                id='dropdown-statistics',
+                options=[{'label': 'Yearly Statistics', 'value': 'Yearly Statistics'},
+                        {'label': 'Recession Period Statistics', 'value': 'Recession Period Statistics'}
+                            ],
+                value='Select Statistics',
+                placeholder='Select a report type'
+            )
+                        ]),
+        html.Div(dcc.Dropdown(
+                id='select-year',
+                options=[{'label': i, 'value': i} for i in year_list],
+                value='Yearly Statistics',
+                placeholder='Select Years',
+            )),
+    ], className='card'),
+    html.Div(children=[
+        dcc.Loading(id="output-loading-1",
+            children=[html.Div(id='output-container1'),
+                    html.Div(id='output-container2')],
+        type="circle")
+     ], className='chart'),
+     ])
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
 

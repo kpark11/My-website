@@ -29,10 +29,9 @@ layout = html.Div([
                         develop innovative data-driven applications. Committed to continuous learning and staying 
                         updated with the latest advancements in data science and technology.
                         """,
-                        className="",
                     ),
                 ], className='cardBody'),
-        ], color="dark", outline=True, className = 'card',),
+        ], color="dark", outline=True, className = 'card', style={'padding':'0px'}),
         
     ]),
 ], className = '')
