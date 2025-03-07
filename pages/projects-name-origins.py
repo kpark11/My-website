@@ -19,8 +19,8 @@ from dash import html,dcc,Input,Output,callback,State
 name_path = 'assets/data/data/names/*.txt'
 model_path = 'assets/char-rnn-classification.pht'
 
-name_path = os.path.join(os.path.dirname(__file__), '../assets/data/data/names/*.txt')
-model_path = os.path.join(os.path.dirname(__file__), '../assets/char-rnn-classification.pht')
+# name_path = os.path.join(os.path.dirname(__file__), '../assets/data/data/names/*.txt')
+# model_path = os.path.join(os.path.dirname(__file__), '../assets/char-rnn-classification.pht')
 
 
 all_letters = string.ascii_letters + " .,;'"
